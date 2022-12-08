@@ -3,5 +3,8 @@
 </script>
 
 <template>
-    <p>Navbar</p>
+   <nav>
+        <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/about">About</RouterLink>
+      </nav>
 </template>
