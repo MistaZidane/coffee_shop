@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="px-4 pt-5 my-5 text-center border-bottom pb-5 explore">
+  <div class="px-4 pt-5 my-5 text-center pb-5 explore">
     <div class="container">
       <h1 class="display-4 fw-bold intro">Explore Coffreka</h1>
       <p class="lead mb-5 mt-4">
@@ -97,6 +97,6 @@
     text-align: center !important;
 }
 .explore{
-    height: 80vh;
+    height: 60vh;
 }
 </style>
