@@ -7,7 +7,7 @@
          <div class="container"> 
   <div class="row flex-lg-row-reverse align-items-center  ">
     <div class="col-md-6">
-      <img src="../assets/header.jpg" alt="" class="img-fluid">
+      <img src="../assets/header.jpg" alt="" class="img-fluid my-img">
     </div>
     <div class="col-md-6">
       <h1 class="intro fw-bold lh-1 mb-3">Coffreka Delicious Coffee</h1>
@@ -26,5 +26,8 @@
 }
 .main{
     background-color: #eeeff1;
+}
+.my-img{
+    filter: grayscale(100%);
 }
 </style>
