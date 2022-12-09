@@ -8,7 +8,7 @@
         <RouterLink to="/about">About</RouterLink>
       </nav> -->
 
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <nav class="navbar navbar-expand-lg navbar-light">
   <div class="container">
     <RouterLink to="/" class="navbar-brand" >Coffreka</RouterLink>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,3 +33,8 @@
   </div>
 </nav>
 </template>
+<style scoped>
+.navbar{
+    background-color: #eeeff1;
+}
+</style>

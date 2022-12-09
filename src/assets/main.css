@@ -1,1 +1,7 @@
 @import './base.css';
+
+.my-btn{
+  background-color: #1b1b1d;
+  color: #eeeff1;
+  border-radius: 30px;
+}
