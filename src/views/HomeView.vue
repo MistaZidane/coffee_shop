@@ -1,8 +1,12 @@
-<script setup lang="ts">
+<script  lang="ts">
+import Header from '@/components/Header.vue';
+import Navbar from '@/components/Navbar.vue';
+export default{
+  components:{Header,Navbar}
+}
 </script>
 
 <template>
-  <main>
-<p>Home</p>
-  </main>
+  <Navbar/>
+ <Header/>
 </template>

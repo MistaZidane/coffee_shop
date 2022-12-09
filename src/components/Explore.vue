@@ -10,7 +10,7 @@
       </p>
       <div class="row">
         <div class="col-md-4 ">
-          <div class="card" style="width: 18rem">
+          <div class="card" >
             <div class="card-body">
               <h5 class="card-title">Our Catering</h5>
               <!-- <h6 class="card-subtitle mb-2 text-muted">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum, molestiae. Exercitationem, rem.</h6> -->
@@ -29,7 +29,7 @@
           </div>
         </div>
         <div class="col-md-4">
-          <div class="card" style="width: 18rem">
+          <div class="card" >
             <div class="card-body">
               <h5 class="card-title">Our Catering</h5>
               <!-- <h6 class="card-subtitle mb-2 text-muted">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum, molestiae. Exercitationem, rem.</h6> -->
@@ -48,7 +48,7 @@
           </div>
         </div>
         <div class="col-md-4">
-          <div class="card" style="width: 18rem">
+          <div class="card" >
             <div class="card-body">
               <h5 class="card-title">Our Catering</h5>
               <!-- <h6 class="card-subtitle mb-2 text-muted">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum, molestiae. Exercitationem, rem.</h6> -->

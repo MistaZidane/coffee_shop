@@ -5,3 +5,9 @@
   color: #eeeff1;
   border-radius: 30px;
 }
+html{
+  background-color: #eeeff1;
+}
+#app{
+  background-color: #eeeff1 !important;
+}
