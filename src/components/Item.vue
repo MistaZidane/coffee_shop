@@ -1,4 +1,6 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+
+</script>
 
 <template>
   <div class="card" style="width: 18rem">
@@ -8,7 +10,8 @@
     <div class="card-body">
       <h5 class="card-title">Coffee Name</h5>
       <p class="card-text">$700</p>
-      <font-awesome-icon icon="fa-solid fa-cart-shopping" />
+      <!-- <font-awesome-icon icon="fa-solid fa-cart-shopping" /> -->
+     
       <a href="#" target="_blank" class="btn my-btn btn-lg">Add to Cart <font-awesome-icon icon="fa-solid fa-cart-shopping" /></a>
     </div>
   </div>

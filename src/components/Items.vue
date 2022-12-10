@@ -8,7 +8,7 @@ export default{
 </script>
 
 <template>
-  <div class="px-4 pt-5 my-5 text-center pb-5 explore">
+  <div class="px-4 pt-5 my-5 pb-5 explore">
     <div class="container">
       <h1 class="display-4 fw-bold intro">Our Coffee Shop</h1>
       <p class="lead mb-5 mt-4">

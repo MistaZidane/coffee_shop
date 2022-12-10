@@ -24,7 +24,7 @@
     font-weight: 800;
 }
 .main{
-    height: 100vh;
+    height: 90vh;
 }
 .my-img{
     filter: grayscale(100%);

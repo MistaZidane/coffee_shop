@@ -7,10 +7,10 @@ import "bootstrap"
 import './assets/main.css'
 import { library } from '@fortawesome/fontawesome-svg-core'
 
-import { faHatWizard } from '@fortawesome/free-solid-svg-icons'
 
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-library.add(faHatWizard)
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
+library.add(faCartShopping)
 
 const app = createApp(App)
 app.component('font-awesome-icon', FontAwesomeIcon)
