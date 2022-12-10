@@ -23,7 +23,7 @@
           <RouterLink to="/about" class="nav-link">About Us</RouterLink>
         </li>
         <li class="nav-item">
-          <RouterLink to="/about" class="nav-link">Find Us</RouterLink>
+          <RouterLink to="/contact" class="nav-link">Contact Us</RouterLink>
         </li>
         <li class="nav-item">
           <RouterLink to="/products" class="nav-link">Products</RouterLink>

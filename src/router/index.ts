@@ -24,6 +24,12 @@ const router = createRouter({
       name: 'menu',
       meta: { transition: 'slide-left' },
       component: () => import('../views/MenuView.vue')
+    },
+    {
+      path: '/about',
+      name: 'about',
+      meta: { transition: 'slide-left' },
+      component: () => import('../views/AboutView.vue')
     }
   ]
 })
