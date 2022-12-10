@@ -3,7 +3,7 @@
     :class="{ loader: true, fadeout: !loading }"
     class="d-flex aligns-items-center justify-content-center align-items-center"
   >
-    <!-- <img src="../assets/logo.svg" alt="" > -->
+    <img src="../assets/logo.svg" alt="" >
 
     <div class="waviy">
       <span style="--i:1">C</span>
@@ -51,7 +51,8 @@ img {
 }
 
 .fadeout {
-  animation: fadeout 2s forwards;
+  transition: all 0.2s;
+  animation: fadeout 0.2s forwards;
 }
 
 @keyframes fadeout {
