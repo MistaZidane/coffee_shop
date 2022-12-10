@@ -12,7 +12,7 @@
     <div class="col-md-6">
       <h1 class="intro fw-bold lh-1 mb-3">Coffreka Delicious Coffee</h1>
       <p class="lead">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos, ullam? Dolores nam deleniti aliquid numquam molestiae dolore corrupti dolorum at, cum, ipsa magni!</p>
-      <button class="btn my-btn btn-lg">Shop Coffee</button>
+      <RouterLink to="/menu" class="btn my-btn btn-lg">Shop Coffee</RouterLink>
     </div>
   </div>
   </div>
