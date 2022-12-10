@@ -15,7 +15,7 @@ export default{
   mounted(){
     setTimeout(()=>{
       this.loading = false
-    },250000)
+    },1500)
   }
 }
 </script>
