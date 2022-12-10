@@ -17,17 +17,17 @@ export default {
           <hr>  
         <div>
           <h4>Headquaters</h4>
-         <p> <font-awesome-icon icon="fa-solid fa-house" /> <span> Lorem ipsum dolor sit amet consectetu. <br> Nam quae est magnam!</span></p>
+         <p> <font-awesome-icon class="icons" icon="fa-solid fa-house" /> <span> Lorem ipsum dolor sit amet consectetu. <br> Nam quae est magnam!</span></p>
         </div>
         <hr>  
         <div>
           <h4>Phone</h4>
-         <p> <font-awesome-icon icon="fa-solid fa-phone" /> <span> +237 676983069</span></p>
+         <p> <font-awesome-icon class="icons" icon="fa-solid fa-phone" /> <span> +237 676983069</span></p>
         </div>
         <hr>  
         <div>
           <h4>Email</h4>
-         <p> <font-awesome-icon icon="fa-solid fa-envelope" /> <a href="mailto:info@Coffreka.com">info@Coffreka.com</a></p>
+         <p> <font-awesome-icon class="icons" icon="fa-solid fa-envelope" /> <a href="mailto:info@Coffreka.com">info@Coffreka.com</a></p>
         </div>
       </div>
         <div class="col-md-8 form-parent pt-5 pb-5">
@@ -125,5 +125,7 @@ export default {
   background-size: cover;
   /* background-color: black; */
 }
-
+.icons{
+  font-size: 30px;
+}
 </style>

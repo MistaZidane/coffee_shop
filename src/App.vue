@@ -1,16 +1,38 @@
-<script setup lang="ts">
+<script  lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import Navbar from './components/Navbar.vue'
+import SplashScreen from './components/SplashScreen.vue';
+export default{
+  components:{
+    Navbar,
+    SplashScreen
+  },
+  data(){
+    return{
+      loading:true,
+    }
+  },
+  mounted(){
+    setTimeout(()=>{
+      this.loading = false
+    },250000)
+  }
+}
 </script>
 
 <template>
-  <Navbar/>
+
+    <SplashScreen v-if="loading"  :loading="loading" />
+
+  <template v-else>
+ <Navbar/>
   <router-view v-slot="{ Component }">
     <transition name="slide" mode="out-in">
       <component :is="Component" />
     </transition>
   </router-view>
-  
+
+  </template>
  
 </template>
 <style scoped>

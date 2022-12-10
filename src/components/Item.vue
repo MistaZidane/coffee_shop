@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div class="card" style="width: 18rem">
+  <div class="card" >
     <div class="container mt-3">
       <img src="../assets/coffee.png" class="card-img-top" alt="..." />
     </div>
