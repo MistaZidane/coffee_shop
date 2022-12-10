@@ -30,6 +30,12 @@ const router = createRouter({
       name: 'about',
       meta: { transition: 'slide-left' },
       component: () => import('../views/AboutView.vue')
+    },
+    {
+      path: '/contact',
+      name: 'contact',
+      meta: { transition: 'slide-left' },
+      component: () => import('../views/ContactView.vue')
     }
   ]
 })

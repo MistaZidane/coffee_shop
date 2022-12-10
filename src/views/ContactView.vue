@@ -7,47 +7,48 @@ export default {
 <template>
   <div class="main px-4 pt-5 my-5 pb-5">
     <div class="container">
+
       <div class="row">
        
-        <div class="col-md-8 ">
-          <h1>About Coffreka</h1>
-          <p class="mt-5">
-            Coffreka Coffee opened over 19 years ago, in 2003, when JD and Kathy
-            Merget moved from their tiny Chinatown apartment to start a small
-            coffee business in Williamsburg, Brooklyn. At the time they simply
-            wanted to serve neighborhood locals the best coffee the area had to
-            offer. Since then Coffreka has grown to be a place JD and Kathy
-            could only have dreamed of, evolving to become a respected
-            establishment with a name that is synonymous with the best coffee in
-            New York City - their own coffee, roasted in their trusty
-            small-batch Probat roaster as Coffreka Coffee Roasters.
-          </p>
-          <p>
-            Expect to find exceptional coffee when you visit our shops. Whether
-            you order an expertly prepared espresso drink or one of our
-            cold-brewed single origin iced coffees, our aim is to prepare your
-            coffee with the same amount of care and insight that went into
-            roasting it, and that’s saying something.
-          </p>
-          <img src="../assets/menu1.jpg" alt="" class="img-fluid" />
-          <p>
-            Our mission is to offer a positive experience for all involved: the
-            best coffee for our customers; the best work environment, training
-            and support for our staff; support for our fellow local businesses
-            by utilizing their products; and participating in and donating to
-            local causes.
-          </p>
-          <p>
-            Our premium coffee beans come from farmers who use ecologically and
-            socially sustainable practices, helping to support a healthy
-            ecosystem and to provide a fair living for their workers. These are
-            the only farms that can produce the high quality coffee we use. The
-            care that goes into growing, shipping and finally roasting these
-            coffees is reflected in the flavor of the finished product.
-          </p>
+        <div class="col-md-4 img-section">
+          <p>Contact Us</p>
+          <h3>Get In Touch with us</h3>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque sed recusandae eligendi, similique libero reprehenderit placeat error neque adipisci animi nam exercitationem nesciunt.</p>
+          <hr>  
+        <div>
+          <h4>Headquaters</h4>
+         <p> <font-awesome-icon icon="fa-solid fa-house" /> <span> Lorem ipsum dolor sit amet consectetu. <br> Nam quae est magnam!</span></p>
         </div>
-        <div class="col-md-1">
+        <hr>  
+        <div>
+          <h4>Phone</h4>
+         <p> <font-awesome-icon icon="fa-solid fa-phone" /> <span> +237 676983069</span></p>
+        </div>
+        <hr>  
+        <div>
+          <h4>Email</h4>
+         <p> <font-awesome-icon icon="fa-solid fa-envelope" /> <a href="mailto:info@Coffreka.com">info@Coffreka.com</a></p>
+        </div>
+      </div>
+        <div class="col-md-8 form-parent pt-5 pb-5">
           
+          <div class="contact-form-wrapper d-flex justify-content-center">
+    <form action="#" class="contact-form">
+      <h5 class="title">Contact us</h5>
+      <p class="description">Feel free to contact us if you need any assistance, any help or another question.
+      </p>
+      <div>
+        <input type="text" class="form-control rounded border-white mb-3 form-input" id="name" placeholder="Name" required>
+      </div>
+      <div>
+        <input type="email" class="form-control rounded border-white mb-3 form-input" placeholder="Email" required>
+      </div>
+      <div>
+        <textarea id="message" class="form-control rounded border-white mb-3 form-text-area" rows="5" cols="30" placeholder="Message" required></textarea>
+      </div>
+      <input type="submit" value="Send Message" class="btn btn-lg my-btn">
+    </form>
+  </div>
         </div>
       </div>
     </div>
@@ -55,7 +56,74 @@ export default {
 </template>
 
 <style scoped>
-.main {
-  height: 93vh;
+
+.img-section{
+    /* background: url('../assets/menu1.jpg'); */
+    filter: grayscale();
 }
+
+.contact-form {
+  padding: 30px 40px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  /* max-width: 400px; */
+}
+
+.contact-form textarea {
+  resize: none;
+}
+
+.contact-form .form-input,
+.form-text-area {
+  background-color: #f0f4f5;
+  height: 50px;
+  padding-left: 16px;
+}
+
+.contact-form .form-text-area {
+  background-color: #f0f4f5;
+  height: auto;
+  padding-left: 16px;
+}
+
+.contact-form .form-control::placeholder {
+  color: #aeb4b9;
+  font-weight: 500;
+  opacity: 1;
+}
+
+.contact-form .form-control:-ms-input-placeholder {
+  color: #aeb4b9;
+  font-weight: 500;
+}
+
+.contact-form .form-control::-ms-input-placeholder {
+  color: #aeb4b9;
+  font-weight: 500;
+}
+
+
+.contact-form .title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.contact-form .description {
+  color: #aeb4b9;
+  font-size: 14px;
+  text-align: center;
+}
+
+.contact-form .submit-button-wrapper {
+  text-align: center;
+}
+
+.form-parent{
+  background:url('../assets/more1.jpg');
+  filter: grayscale();
+  background-size: cover;
+  /* background-color: black; */
+}
+
 </style>
