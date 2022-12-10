@@ -3,7 +3,7 @@
 <template>
   <div class="px-4 pt-5 my-5 text-center pb-5 explore">
     <div class="container">
-      <h1 class="display-4 fw-bold intro">Best Selling Coffee</h1>
+      <h1 class="display-4 fw-bold intro">Our Shop</h1>
       <p class="lead mb-5 mt-4">
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi,
         pariatur labore! Tempore ducimus ad laborum?
@@ -87,4 +87,5 @@
   /* width: fit-content;
   height: fit-content; */
 }
+
 </style>

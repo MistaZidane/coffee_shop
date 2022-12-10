@@ -17,7 +17,6 @@
   </div>
   </div>
     </div>
-   
 </template>
 <style scoped>
 .intro{
@@ -30,4 +29,5 @@
 .my-img{
     filter: grayscale(100%);
 }
+
 </style>

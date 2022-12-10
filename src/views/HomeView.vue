@@ -1,12 +1,19 @@
 <script  lang="ts">
 import Header from '@/components/Header.vue';
-import Navbar from '@/components/Navbar.vue';
 export default{
-  components:{Header,Navbar}
+  components:{Header}
 }
 </script>
 
 <template>
-  <Navbar/>
- <Header/>
+ <transition>
+    <Header/> 
+</transition>
 </template>
+<style>
+/*
+  Enter and leave animations can use different
+  durations and timing functions.
+*/
+
+</style>

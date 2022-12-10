@@ -17,7 +17,7 @@
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <RouterLink to="/about" class="nav-link">Cafe Menu</RouterLink>
+          <RouterLink to="/menu" class="nav-link">Menu</RouterLink>
         </li>
         <li class="nav-item">
           <RouterLink to="/about" class="nav-link">About Us</RouterLink>
