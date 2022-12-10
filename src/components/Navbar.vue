@@ -26,7 +26,7 @@
           <RouterLink to="/about" class="nav-link">Find Us</RouterLink>
         </li>
         <li class="nav-item">
-          <RouterLink to="/about" class="nav-link">Products</RouterLink>
+          <RouterLink to="/products" class="nav-link">Products</RouterLink>
         </li>
       </ul>
     </div>

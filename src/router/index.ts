@@ -11,13 +11,19 @@ const router = createRouter({
       meta: { transition: 'slide-left' },
     },
     {
-      path: '/menu',
-      name: 'menu',
+      path: '/products',
+      name: 'products',
       meta: { transition: 'slide-left' },
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../views/Menu.vue')
+      component: () => import('../views/ProductsView.vue')
+    },
+    {
+      path: '/menu',
+      name: 'menu',
+      meta: { transition: 'slide-left' },
+      component: () => import('../views/MenuView.vue')
     }
   ]
 })
