@@ -28,6 +28,9 @@
         <li class="nav-item">
           <RouterLink to="/products" class="nav-link">Products</RouterLink>
         </li>
+        <li class="nav-item">
+          <RouterLink to="/products" class="nav-link"> <font-awesome-icon icon="fa-solid fa-cart-shopping" /></RouterLink>
+        </li>
       </ul>
     </div>
   </div>
