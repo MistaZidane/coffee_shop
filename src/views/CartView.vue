@@ -128,12 +128,6 @@ export default {
 .sub, .total{
   font-weight: 800;
 }
-.main{
-  /* background-color: #D9B692; */
-}
-.bg-free{
-  /* background-color: #eeeff1; */
-}
 .info{
   color: #eeeff1;
   background-color: #1b1b1d;
