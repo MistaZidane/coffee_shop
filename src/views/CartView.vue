@@ -5,11 +5,28 @@ export default {
 </script>
 
 <template>
-  <div class="main px-4 pt-5 my-5 pb-5">
+  <div class="main px-4 pt-5 my-5 pb-5 ">
     <div class="container">
-      <h2>Shopping Cart</h2>
+      
       <div class="row">
-        <div class="col-12 col-sm-8 items">
+        <div class="col-md-12 info mb-5 p-3">
+          <div class="row">
+            <div class="col-md-5">
+              <h1 class="cart-text">Shopping <br> Cart</h1>
+
+            </div>
+            <div class="col-md-3">
+             <h3>Need Assistance?</h3>
+             <p><a href="mailto:">shop@coffreka.com</a></p>
+             <p><a href="mailto:">+237 68484454</a></p>
+            </div>
+            
+            <div class="col-md-4">
+             
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-8 bg-free">
         <!--1-->
         <div class="cartItem row align-items-start">
           <div class="col-3 mb-2">
@@ -47,7 +64,7 @@ export default {
         </div>
         <hr>
       </div>
-      <div class="col-12 col-sm-4 p-3 proceed form">
+      <div class="col-12 col-sm-4 p-3 proceed form bg-free">
         <div class="row m-0">
           <div class="col-sm-8 p-0">
             <h6 class="sub">Subtotal</h6>
@@ -92,7 +109,7 @@ export default {
 }
 .cartItemQuantity,
 .proceed {
-  background: #D9B692;
+  /* background: #D9B692; */
   /* color: #eeeff1; */
   border-radius: 10px;
 }
@@ -103,6 +120,10 @@ export default {
   /* background-color: #eeeff1;
   color: #1b1b1d; */
 }
+.cart-text{
+  font-size: 60px;
+  font-weight: 800;
+}
 .cartItemQuantity{
   background-color: #1b1b1d;
   color: #eeeff1;
@@ -110,5 +131,17 @@ export default {
 .sub, .total{
   font-weight: 800;
 }
-
+.main{
+  /* background-color: #D9B692; */
+}
+.bg-free{
+  /* background-color: #eeeff1; */
+}
+.info{
+  color: #eeeff1;
+  background-color: #1b1b1d;
+}
+p a{
+  color: #eeeff1;
+}
 </style>
