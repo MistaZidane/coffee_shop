@@ -43,13 +43,8 @@ components:{
 }
 .img-fluid{
   height: 300px;
-  /* width: fit-content;
-  height: fit-content; */
 }
-/*
-  Enter and leave animations can use different
-  durations and timing functions.
-*/
+
 .slide-fade-enter-active {
   transition: all 0.3s ease-out;
 }
