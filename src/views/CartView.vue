@@ -116,10 +116,7 @@ export default {
 .items {
   padding-right: 30px;
 }
-.my-btn{
-  /* background-color: #eeeff1;
-  color: #1b1b1d; */
-}
+
 .cart-text{
   font-size: 60px;
   font-weight: 800;
