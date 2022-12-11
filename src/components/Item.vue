@@ -25,7 +25,7 @@ export default{
     methods:{
         addToCart(){
 
-            console.log("added Item with Id:", this.itemId);
+            console.log("added Item with Id:", this.$props.itemId);
             let addToCartBtn:any = this.$refs.addToCartBtn;
             let cart = document.querySelector('#cart');
             console.log(cart,"do");

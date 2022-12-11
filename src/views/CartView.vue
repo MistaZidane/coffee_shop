@@ -1,6 +1,7 @@
 <script lang="ts">
+import CartItem from "../components/cartItem.vue"
 export default {
-  components: {},
+  components: {CartItem},
 };
 </script>
 
@@ -28,41 +29,10 @@ export default {
         </div>
         <div class="col-12 col-sm-8 bg-free">
         <!--1-->
-        <div class="cartItem row align-items-start">
-          <div class="col-3 mb-2">
-            <img class="w-100" src="../assets/coffee.png" alt="art image">
-          </div>
-          <div class="col-5 mb-2">
-            <h6 class="">Dark Art 1</h6>
-            <p class="pl-1 mb-0">20 x 24</p>
-            <p class="pl-1 mb-0">Matte Print</p>
-          </div>
-          <div class="col-2">
-            <p class="cartItemQuantity p-1 text-center">1</p>
-          </div>
-          <div class="col-2">
-            <p id="cartItem1Price">$66</p>
-          </div>
-        </div>
-        <hr>
-        <!--2-->
-        <div class="cartItem row align-items-start">
-          <div class="col-3 mb-2">
-            <img class="w-100" src="../assets/coffee.png" alt="art image">
-          </div>
-          <div class="col-5 mb-2">
-            <h6 class="">Dark Art 2</h6>
-            <p class="pl-1 mb-0">20 x 24</p>
-            <p class="pl-1 mb-0">Matte Print</p>
-          </div>
-          <div class="col-2">
-            <p class="cartItemQuantity p-1 text-center">1</p>
-          </div>
-          <div class="col-2">
-            <p id="cartItem1Price">$66</p>
-          </div>
-        </div>
-        <hr>
+       <CartItem/>
+        
+       <CartItem/>
+      
       </div>
       <div class="col-12 col-sm-4 p-3 proceed form bg-free">
         <div class="row m-0">
