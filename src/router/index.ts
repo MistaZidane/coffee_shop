@@ -36,6 +36,12 @@ const router = createRouter({
       name: 'contact',
       meta: { transition: 'slide-left' },
       component: () => import('../views/ContactView.vue')
+    },
+    {
+      path: '/cart',
+      name: 'cart',
+      meta: { transition: 'slide-left' },
+      component: () => import('../views/CartView.vue')
     }
   ]
 })

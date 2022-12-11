@@ -32,7 +32,7 @@
             <RouterLink to="/products" class="nav-link">Products</RouterLink>
           </li>
           <li class="nav-item">
-            <RouterLink to="/products" class="nav-link">
+            <RouterLink to="/cart" class="nav-link">
               <font-awesome-icon icon="fa-solid fa-cart-shopping"
             /></RouterLink>
           </li>
