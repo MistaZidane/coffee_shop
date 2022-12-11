@@ -29,9 +29,9 @@ export default {
         </div>
         <div class="col-12 col-sm-8 bg-free">
         <!--1-->
-       <CartItem/>
+       <CartItem name="Freya Dark Roast" :price=100 info="Honey • Caramel • Molasses. Bold, robust, and smoky chocolate" item-id="1"/>
         
-       <CartItem/>
+       <CartItem name="Thor House Blend" :price=120 info="Raw Sugar • Chocolate Liquor • Berries.  Bold lively and bright." item-id="1"/>
       
       </div>
       <div class="col-12 col-sm-4 p-3 proceed form bg-free">
