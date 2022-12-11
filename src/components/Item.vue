@@ -5,12 +5,27 @@ export default{
 
         }
     },
+    props:{
+        name:{
+            type: String,
+            required:true
+        },
+        itemId:{
+            type: String,
+            required:true
+        },
+        price:{
+            type: Number,
+            required:true
+        }
+    },
     mounted(){
  
     },
     methods:{
         addToCart(){
-            console.log("added");
+
+            console.log("added Item with Id:", this.itemId);
             let addToCartBtn:any = this.$refs.addToCartBtn;
             let cart = document.querySelector('#cart');
             console.log(cart,"do");
@@ -33,8 +48,8 @@ export default{
       <img src="../assets/coffee.png" class="card-img-top" alt="..." />
     </div>
     <div class="card-body">
-      <h5 class="card-title">Coffee Name</h5>
-      <p class="card-text">$700</p>
+      <h5 class="card-title">{{name}}</h5>
+      <p class="card-text">${{price}}</p>
       <!-- <font-awesome-icon icon="fa-solid fa-cart-shopping" /> -->
      
       <button @click="addToCart" class="btn my-btn btn-lg"  ref="addToCartBtn">Add to Cart  <span class="cart-item"></span> <font-awesome-icon icon="fa-solid fa-cart-shopping" /></button>

@@ -16,13 +16,13 @@ components:{
       </p></div>
       <div class="row">
         <div class="col-md-4 g-3">
-          <Item/>
+          <Item name="Coffee one" :price=35 itemId="1" />
         </div>
         <div class="col-md-4 g-3">
-          <Item/>
+          <Item name="Coffee two" :price=45 itemId="2" />
         </div>
         <div class="col-md-4 g-3">
-          <Item/>
+          <Item name="Coffee three" :price=65 itemId="3" />
         </div>
       </div>
     </div>

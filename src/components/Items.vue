@@ -16,13 +16,13 @@ export default{
       </p>
       <div class="row">
         <div class="col-md-4">
-          <Item/>
+          <Item name="Coffee one" :price=35 itemId="1" />
         </div>
         <div class="col-md-4">
-          <Item/>
+          <Item name="Coffee one" :price=35 itemId="2" />
         </div>
         <div class="col-md-4">
-          <Item/>
+          <Item name="Coffee one" :price=35 itemId="3" />
         </div>
       </div>
     </div>
