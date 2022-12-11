@@ -31,8 +31,8 @@
           <li class="nav-item">
             <RouterLink to="/products" class="nav-link">Products</RouterLink>
           </li>
-          <li class="nav-item">
-            <RouterLink to="/cart" class="nav-link">
+          <li class="nav-item cart" id="cart">
+            <RouterLink to="/cart" class="nav-link" >
               <font-awesome-icon icon="fa-solid fa-cart-shopping"
             /></RouterLink>
           </li>
