@@ -5,6 +5,9 @@
   color: #eeeff1;
   border-radius: 30px;
 }
+.my-btn:hover{
+  border:  1px solid #1b1b1d;
+}
 html{
   background-color: #eeeff1;
 }
@@ -12,13 +15,6 @@ html{
   background-color: #eeeff1 !important;
 }
 
-
-
-.cart {
-  /* position: fixed; */
-  /* top: 20px; */
-  /* right: 20px; */
-}
 .cart:before {
   content: "2";
   font-size: 12px;
