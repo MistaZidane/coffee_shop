@@ -14,7 +14,7 @@ export default{
       <p class="lead mb-5 mt-4">
         Shop our fresh roasted coffees
       </p>
-      <div class="row">
+      <!-- <div class="row">
         <div class="col-md-4">
           <Item name="Coffee one" :price=35 itemId="1" />
         </div>
@@ -24,7 +24,7 @@ export default{
         <div class="col-md-4">
           <Item name="Coffee one" :price=35 itemId="3" />
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>

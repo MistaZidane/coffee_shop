@@ -1,8 +1,30 @@
 <script lang="ts">
 import Item from '@/components/Item.vue';
+import { getProducts } from '@/services/api';
+interface Product{
+  info:string,
+  id:string,
+  imgUrl:string,
+  name:string,
+  price: number
+}
 export default{
 components:{
-  Item
+  Item,
+},
+data(){
+  return{
+    products:[] as Product[]
+  }
+},
+beforeCreate(){
+  getProducts().then((val:any)=>{
+    this.products = val.data.listProducts.items
+    
+  }).catch((err)=>{
+
+    
+  })
 }
 }
 </script>
@@ -15,15 +37,10 @@ components:{
         Shop our fresh roasted coffees
       </p></div>
       <div class="row">
-        <div class="col-md-4 g-3">
-          <Item name="Coffee one" :price=35 itemId="1" />
+        <div class="col-md-4 g-3" v-for="(item,index) in products" :key="index">
+          <Item :name="item.name" :price=item.price :itemId="item.id" :imgUrl="item.imgUrl" :info="item.info" />
         </div>
-        <div class="col-md-4 g-3">
-          <Item name="Coffee two" :price=45 itemId="2" />
-        </div>
-        <div class="col-md-4 g-3">
-          <Item name="Coffee three" :price=65 itemId="3" />
-        </div>
+      
       </div>
     </div>
   </div>

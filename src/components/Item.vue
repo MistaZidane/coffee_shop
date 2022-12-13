@@ -14,6 +14,14 @@ export default{
             type: String,
             required:true
         },
+        imgUrl:{
+            type: String,
+            required:true
+        },
+        info:{
+            type: String,
+            required:true
+        },
         price:{
             type: Number,
             required:true
@@ -24,11 +32,9 @@ export default{
     },
     methods:{
         addToCart(){
-
-            console.log("added Item with Id:", this.$props.itemId);
+            console.log(this.$props.itemId);
             let addToCartBtn:any = this.$refs.addToCartBtn;
             let cart = document.querySelector('#cart');
-            console.log(cart,"do");
             addToCartBtn?.classList.add('sendtocart');
             setTimeout(()=>{
                 addToCartBtn?.classList.remove("sendtocart")
@@ -45,11 +51,11 @@ export default{
 <template>
   <div class="card" >
     <div class="container mt-3">
-      <img src="../assets/coffee.png" class="card-img-top" alt="..." />
+      <img :src="imgUrl" class="card-img-top" alt="..." />
     </div>
     <div class="card-body">
       <h5 class="card-title">{{name}}</h5>
-      <p class="card-text">${{price}}</p>
+      <p class="card-text">${{price}}:  <span>{{info}}</span></p>
       <!-- <font-awesome-icon icon="fa-solid fa-cart-shopping" /> -->
      
       <button @click="addToCart" class="btn my-btn btn-lg"  ref="addToCartBtn">Add to Cart  <span class="cart-item"></span> <font-awesome-icon icon="fa-solid fa-cart-shopping" /></button>

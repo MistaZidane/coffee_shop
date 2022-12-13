@@ -1,9 +1,9 @@
 <script lang="ts">
 import { getSiteInfo } from "../services/api";
 interface SiteInfo {
-  email: String;
-  phone: String;
-  location: String;
+  email: string;
+  phone: string;
+  location: string;
 }
 
 export default {
