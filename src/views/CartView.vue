@@ -1,6 +1,12 @@
+
+<script setup lang="ts">
+import { Authenticator } from "@aws-amplify/ui-vue";
+import "@aws-amplify/ui-vue/styles.css";
+</script>
 <script lang="ts">
-import CartItem from "../components/cartItem.vue"
+import CartItem from "../components/cartItem.vue";
 import { getSiteInfo } from "@/services/api";
+
 interface SiteInfo {
   email: string;
   phone: string;
@@ -8,7 +14,7 @@ interface SiteInfo {
 }
 
 export default {
-  components: {CartItem},
+  components: { CartItem },
   data() {
     return {
       siteInfo: {} as SiteInfo,
@@ -30,63 +36,75 @@ export default {
 </script>
 
 <template>
-  <div class="main px-4 pt-5 my-5 pb-5 ">
+  <div class="main px-4 pt-5 my-5 pb-5">
     <div class="container">
-      
       <div class="row">
         <div class="col-md-12 info mb-5 p-3">
           <div class="row">
             <div class="col-md-5">
-              <h1 class="cart-text">Shopping <br> Cart</h1>
-
+              <h1 class="cart-text">
+                Shopping <br />
+                Cart
+              </h1>
             </div>
             <div class="col-md-3">
-             <h3>Need Assistance?</h3>
-             <p><a :href="'mailto:'+siteInfo.email">{{siteInfo.email}}</a></p>
-             <p><a :href="'tel:' +siteInfo.phone">{{siteInfo.phone}}</a></p>
-             <p>Location: {{siteInfo.location}}</p>
+              <h3>Need Assistance?</h3>
+              <p>
+                <a :href="'mailto:' + siteInfo.email">{{ siteInfo.email }}</a>
+              </p>
+              <p>
+                <a :href="'tel:' + siteInfo.phone">{{ siteInfo.phone }}</a>
+              </p>
+              <p>Location: {{ siteInfo.location }}</p>
             </div>
-            
-            <div class="col-md-4">
-             
-            </div>
+
+            <div class="col-md-4"></div>
           </div>
         </div>
         <div class="col-12 col-sm-8 bg-free">
-        <!--1-->
-       <CartItem name="Freya Dark Roast" :price=100 info="Honey • Caramel • Molasses. Bold, robust, and smoky chocolate" item-id="1"/>
-        
-       <CartItem name="Thor House Blend" :price=120 info="Raw Sugar • Chocolate Liquor • Berries.  Bold lively and bright." item-id="1"/>
-      
-      </div>
-      <div class="col-12 col-sm-4 p-3 proceed form bg-free">
-        <div class="row m-0">
-          <div class="col-sm-8 p-0">
-            <h6 class="sub">Subtotal</h6>
-          </div>
-          <div class="col-sm-4 p-0">
-            <p id="subtotal">$132.00</p>
-          </div>
+          <!--1-->
+          <CartItem
+            name="Freya Dark Roast"
+            :price="100"
+            info="Honey • Caramel • Molasses. Bold, robust, and smoky chocolate"
+            item-id="1"
+          />
+
+          <CartItem
+            name="Thor House Blend"
+            :price="120"
+            info="Raw Sugar • Chocolate Liquor • Berries.  Bold lively and bright."
+            item-id="1"
+          />
         </div>
-        <div class="row m-0">
-          <div class="col-sm-8 p-0 ">
-            <h6>Tax</h6>
+        <div class="col-12 col-sm-4 p-3 proceed form bg-free">
+          <div class="row m-0">
+            <div class="col-sm-8 p-0">
+              <h6 class="sub">Subtotal</h6>
+            </div>
+            <div class="col-sm-4 p-0">
+              <p id="subtotal">$132.00</p>
+            </div>
           </div>
-          <div class="col-sm-4 p-0">
-            <p id="tax">$6.40</p>
+          <div class="row m-0">
+            <div class="col-sm-8 p-0">
+              <h6>Tax</h6>
+            </div>
+            <div class="col-sm-4 p-0">
+              <p id="tax">$6.40</p>
+            </div>
           </div>
+          <hr />
+          <div class="row mx-0 mb-2">
+            <div class="col-sm-8 p-0 d-inline">
+              <h5 class="total">Total</h5>
+            </div>
+            <div class="col-sm-4 p-0">
+              <p id="total">$138.40</p>
+            </div>
+          </div>
+          <button class="btn btn-lg my-btn">Place Order</button>
         </div>
-        <hr>
-        <div class="row mx-0 mb-2">
-          <div class="col-sm-8 p-0 d-inline">
-            <h5 class="total">Total</h5>
-          </div>
-          <div class="col-sm-4 p-0">
-            <p id="total">$138.40</p>
-          </div>
-        </div>
-       <button class="btn btn-lg my-btn">Place Order</button>
-      </div>
       </div>
     </div>
   </div>
@@ -112,22 +130,23 @@ export default {
   padding-right: 30px;
 }
 
-.cart-text{
+.cart-text {
   font-size: 60px;
   font-weight: 800;
 }
-.cartItemQuantity{
+.cartItemQuantity {
   background-color: #1b1b1d;
   color: #eeeff1;
 }
-.sub, .total{
+.sub,
+.total {
   font-weight: 800;
 }
-.info{
+.info {
   color: #eeeff1;
   background-color: #1b1b1d;
 }
-p a{
+p a {
   color: #eeeff1;
 }
 </style>
