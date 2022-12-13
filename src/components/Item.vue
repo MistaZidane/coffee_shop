@@ -29,8 +29,13 @@ export default {
   mounted() {},
   methods: {
     addToCart() {
-      console.log(this.$props.itemId);
-      this.store.addItemToCart({name:"test",info:"test",id:this.$props.itemId, price:200,imgUrl:"../image"})
+      this.store.addItemToCart({
+        name: this.$props.name,
+        info: this.$props.info,
+        id: this.$props.itemId,
+        price: this.$props.price,
+        imgUrl: this.$props.imgUrl,
+      });
       let addToCartBtn: any = this.$refs.addToCartBtn;
       let cart = document.querySelector("#cart");
       addToCartBtn?.classList.add("sendtocart");

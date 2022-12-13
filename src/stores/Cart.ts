@@ -1,4 +1,5 @@
 import { defineStore } from "pinia";
+
 interface CartItem {
   name: string;
   info: string;
@@ -15,6 +16,8 @@ export const useCartStore = defineStore("cart", {
     addItemToCart(item: CartItem) {
       this.cart.push(item);
     },
-    getSavedCart() {},
+    getSavedCart() {
+
+    },
   },
 });
