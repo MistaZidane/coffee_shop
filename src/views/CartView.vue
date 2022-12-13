@@ -1,7 +1,31 @@
 <script lang="ts">
 import CartItem from "../components/cartItem.vue"
+import { getSiteInfo } from "@/services/api";
+interface SiteInfo {
+  email: string;
+  phone: string;
+  location: string;
+}
+
 export default {
   components: {CartItem},
+  data() {
+    return {
+      siteInfo: {} as SiteInfo,
+    };
+  },
+  beforeCreate() {
+    getSiteInfo()
+      .then((val: any) => {
+        let res = val.data.listSiteInfos.items[0];
+        this.siteInfo.email = res.email;
+        this.siteInfo.phone = res.phone;
+        this.siteInfo.location = res.location;
+      })
+      .catch((err) => {
+        console.log(err, "err");
+      });
+  },
 };
 </script>
 
@@ -18,8 +42,9 @@ export default {
             </div>
             <div class="col-md-3">
              <h3>Need Assistance?</h3>
-             <p><a href="mailto:">shop@coffreka.com</a></p>
-             <p><a href="mailto:">+237 68484454</a></p>
+             <p><a :href="'mailto:'+siteInfo.email">{{siteInfo.email}}</a></p>
+             <p><a :href="'tel:' +siteInfo.phone">{{siteInfo.phone}}</a></p>
+             <p>Location: {{siteInfo.location}}</p>
             </div>
             
             <div class="col-md-4">

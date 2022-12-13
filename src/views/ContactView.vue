@@ -1,5 +1,5 @@
 <script lang="ts">
-import { getSiteInfo } from "../services/api";
+import { getSiteInfo } from "@/services/api";
 interface SiteInfo {
   email: string;
   phone: string;
