@@ -1,5 +1,6 @@
 <script lang="ts">
 import { getSiteInfo, createContacts } from "@/services/api";
+import Loader from "@/components/Loader.vue";
 import { useToast } from "vue-toastification";
 interface SiteInfo {
   email: string;
@@ -9,13 +10,17 @@ interface SiteInfo {
 
 export default {
   setup() {
-      // Get toast interface
-      const toast = useToast();
-      return { toast }
-    },
+    // Get toast interface
+    const toast = useToast();
+    return { toast };
+  },
+  components:{
+    Loader
+  },
   data() {
     return {
       siteInfo: {} as SiteInfo,
+      showLoader: false,
       contactFormInfo: {
         name: "",
         email: "",
@@ -23,7 +28,6 @@ export default {
       },
     };
   },
-  components: {},
   beforeCreate() {
     getSiteInfo()
       .then((val: any) => {
@@ -38,16 +42,22 @@ export default {
   },
   methods: {
     contact() {
+      this.showLoader = true;
       createContacts(
         this.contactFormInfo.email,
         this.contactFormInfo.message,
         this.contactFormInfo.name
       )
         .then((val: any) => {
-          this.toast.success("Contact sent! We will get back to you shortly")
+          this.toast.success("Contact sent! We will get back to you shortly");
+          this.showLoader = false;
+          this.contactFormInfo.email = '';
+          this.contactFormInfo.name = '';
+          this.contactFormInfo.message = '';
         })
         .catch((err) => {
           console.log(err);
+          this.showLoader = false;
         });
     },
   },
@@ -130,10 +140,12 @@ export default {
                 ></textarea>
               </div>
               <input
+                v-if="!showLoader"
                 type="submit"
                 value="Send Message"
                 class="btn btn-lg my-btn"
               />
+              <Loader v-else> </Loader>
             </form>
           </div>
         </div>
