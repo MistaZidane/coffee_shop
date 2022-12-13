@@ -69,7 +69,7 @@ img {
 .waviy span {
   position: relative;
   display: inline-block;
-  background-color: #eeeff1;
+  background-color: transparent;
   text-transform: uppercase;
   animation: waviy 1s;
   animation-delay: calc(.1s * var(--i));
