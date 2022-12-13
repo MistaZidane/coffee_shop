@@ -6,7 +6,7 @@ import { Amplify, API, graphqlOperation } from "aws-amplify";
 import awsconfig from "./aws-exports";
 Amplify.configure(awsconfig);
 // vue toast
-import Toast, {PluginOptions} from "vue-toastification";
+import Toast from "vue-toastification";
 // Import the CSS or use your own!
 import "vue-toastification/dist/index.css";
 
@@ -30,7 +30,7 @@ library.add(faEnvelope);
 
 const app = createApp(App);
 app.component("font-awesome-icon", FontAwesomeIcon);
-const options:PluginOptions = {
+const options = {
   // You can set your default options here
 };
 

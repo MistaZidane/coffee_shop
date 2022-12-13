@@ -1,5 +1,6 @@
 <script lang="ts">
 import { getSiteInfo, createContacts } from "@/services/api";
+import { useToast } from "vue-toastification";
 interface SiteInfo {
   email: string;
   phone: string;
@@ -7,6 +8,11 @@ interface SiteInfo {
 }
 
 export default {
+  setup() {
+      // Get toast interface
+      const toast = useToast();
+      return { toast }
+    },
   data() {
     return {
       siteInfo: {} as SiteInfo,
@@ -38,7 +44,7 @@ export default {
         this.contactFormInfo.name
       )
         .then((val: any) => {
-          
+          this.toast.success("Contact sent! We will get back to you shortly")
         })
         .catch((err) => {
           console.log(err);
