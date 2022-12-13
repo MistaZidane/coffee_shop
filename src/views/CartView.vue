@@ -1,7 +1,8 @@
-
 <script setup lang="ts">
-import { Authenticator } from "@aws-amplify/ui-vue";
-import "@aws-amplify/ui-vue/styles.css";
+import { toRefs } from "vue";
+import { Authenticator, useAuthenticator } from "@aws-amplify/ui-vue";
+// const { route, user, signOut } = toRefs(useAuthenticator());
+const auth = useAuthenticator();
 </script>
 <script lang="ts">
 import CartItem from "../components/cartItem.vue";
@@ -103,8 +104,16 @@ export default {
               <p id="total">$138.40</p>
             </div>
           </div>
-          <button class="btn btn-lg my-btn">Place Order</button>
 
+          <template v-if="auth.authStatus === 'authenticated'">
+            <button class="btn btn-lg my-btn">Place Order</button>
+          </template>
+          <template v-else>
+            <p>Please login or Create an account to place and order.</p>
+            <RouterLink to="/auth" class="btn btn-lg my-btn">
+              Create account
+            </RouterLink>
+          </template>
         </div>
       </div>
     </div>

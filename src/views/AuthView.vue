@@ -1,7 +1,9 @@
 
 <script setup lang="ts">
-import { Authenticator } from "@aws-amplify/ui-vue";
-
+ import { toRefs } from 'vue';
+import { Authenticator,useAuthenticator } from "@aws-amplify/ui-vue";
+// const { route, user, signOut } = toRefs(useAuthenticator());
+const auth = useAuthenticator();
 </script>
 <script lang="ts">
 import CartItem from "../components/cartItem.vue";
@@ -43,7 +45,8 @@ export default {
           <authenticator>
             <template v-slot="{ user, signOut }">
               <h1>Hello {{ user.username }}!</h1>
-              <button @click="signOut">Sign Out</button>
+              <RouterLink to="/menu"  class="btn my-btn btn-lg">Continue shopping</RouterLink>
+              <button @click="signOut" class="btn my-btn btn-lg">Sign Out</button>
             </template>
           </authenticator>
         </div>
