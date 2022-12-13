@@ -1,7 +1,10 @@
 import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router";
-
+// aws
+import { Amplify, API, graphqlOperation } from 'aws-amplify';
+import awsconfig from './aws-exports';
+Amplify.configure(awsconfig);
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap";
@@ -23,8 +26,6 @@ library.add(faEnvelope);
 
 const app = createApp(App);
 app.component("font-awesome-icon", FontAwesomeIcon);
-
-
 
 app.use(router);
 

@@ -1,54 +1,112 @@
 <script lang="ts">
+import { getSiteInfo } from "../services/api";
+interface SiteInfo {
+  email: String;
+  phone: String;
+  location: String;
+}
+
 export default {
+  data() {
+    return {
+      siteInfo: {} as SiteInfo,
+    };
+  },
   components: {},
+  beforeCreate() {
+    getSiteInfo()
+      .then((val: any) => {
+        let res = val.data.listSiteInfos.items[0];
+        this.siteInfo.email = res.email;
+        this.siteInfo.phone = res.phone;
+        this.siteInfo.location = res.location;
+      })
+      .catch((err) => {
+        console.log(err, "err");
+      });
+  },
 };
 </script>
 
 <template>
   <div class="main px-4 pt-5 my-5 pb-5">
     <div class="container">
-
       <div class="row">
-       
         <div class="col-md-4 img-section">
           <p>Contact Us</p>
           <h3>Get In Touch with us</h3>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque sed recusandae eligendi, similique libero reprehenderit placeat error neque adipisci animi nam exercitationem nesciunt.</p>
-          <hr>  
-        <div>
-          <h4>Headquaters</h4>
-         <p> <font-awesome-icon class="icons" icon="fa-solid fa-house" /> <span> Lorem ipsum dolor sit amet consectetu. <br> Nam quae est magnam!</span></p>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque sed
+            recusandae eligendi, similique libero reprehenderit placeat error
+            neque adipisci animi nam exercitationem nesciunt.
+          </p>
+          <hr />
+          <div>
+            <h4>Headquaters</h4>
+            <p>
+              <font-awesome-icon class="icons" icon="fa-solid fa-house" />
+              <span> {{ siteInfo.location }}</span>
+            </p>
+          </div>
+          <hr />
+          <div>
+            <h4>Phone</h4>
+            <p>
+              <font-awesome-icon class="icons" icon="fa-solid fa-phone" />
+              <span> {{ siteInfo.phone }}</span>
+            </p>
+          </div>
+          <hr />
+          <div>
+            <h4>Email</h4>
+            <p>
+              <font-awesome-icon class="icons" icon="fa-solid fa-envelope" />
+              <a href="mailto:info@Coffreka.com"> {{ siteInfo.email }}</a>
+            </p>
+          </div>
         </div>
-        <hr>  
-        <div>
-          <h4>Phone</h4>
-         <p> <font-awesome-icon class="icons" icon="fa-solid fa-phone" /> <span> +237 676983069</span></p>
-        </div>
-        <hr>  
-        <div>
-          <h4>Email</h4>
-         <p> <font-awesome-icon class="icons" icon="fa-solid fa-envelope" /> <a href="mailto:info@Coffreka.com">info@Coffreka.com</a></p>
-        </div>
-      </div>
         <div class="col-md-8 form-parent pt-5 pb-5">
-          
           <div class="contact-form-wrapper d-flex justify-content-center">
-    <form action="#" class="contact-form">
-      <h5 class="title">Contact us</h5>
-      <p class="description">Feel free to contact us if you need any assistance, any help or another question.
-      </p>
-      <div>
-        <input type="text" class="form-control rounded border-white mb-3 form-input" id="name" placeholder="Name" required>
-      </div>
-      <div>
-        <input type="email" class="form-control rounded border-white mb-3 form-input" placeholder="Email" required>
-      </div>
-      <div>
-        <textarea id="message" class="form-control rounded border-white mb-3 form-text-area" rows="5" cols="30" placeholder="Message" required></textarea>
-      </div>
-      <input type="submit" value="Send Message" class="btn btn-lg my-btn">
-    </form>
-  </div>
+            <form action="#" class="contact-form">
+              <h5 class="title">Contact us</h5>
+              <p class="description">
+                Feel free to contact us if you need any assistance, any help or
+                another question.
+              </p>
+              <div>
+                <input
+                  type="text"
+                  class="form-control rounded border-white mb-3 form-input"
+                  id="name"
+                  placeholder="Name"
+                  required
+                />
+              </div>
+              <div>
+                <input
+                  type="email"
+                  class="form-control rounded border-white mb-3 form-input"
+                  placeholder="Email"
+                  required
+                />
+              </div>
+              <div>
+                <textarea
+                  id="message"
+                  class="form-control rounded border-white mb-3 form-text-area"
+                  rows="5"
+                  cols="30"
+                  placeholder="Message"
+                  required
+                ></textarea>
+              </div>
+              <input
+                type="submit"
+                value="Send Message"
+                class="btn btn-lg my-btn"
+              />
+            </form>
+          </div>
         </div>
       </div>
     </div>
@@ -56,10 +114,9 @@ export default {
 </template>
 
 <style scoped>
-
-.img-section{
-    /* background: url('../assets/menu1.jpg'); */
-    filter: grayscale();
+.img-section {
+  /* background: url('../assets/menu1.jpg'); */
+  filter: grayscale();
 }
 
 .contact-form {
@@ -102,7 +159,6 @@ export default {
   font-weight: 500;
 }
 
-
 .contact-form .title {
   text-align: center;
   font-size: 24px;
@@ -119,13 +175,13 @@ export default {
   text-align: center;
 }
 
-.form-parent{
-  background:url('../assets/more1.jpg');
+.form-parent {
+  background: url("../assets/more1.jpg");
   filter: grayscale();
   background-size: cover;
   /* background-color: black; */
 }
-.icons{
+.icons {
   font-size: 30px;
 }
 </style>

@@ -28,6 +28,6 @@ type SiteInfo @model {
   id: ID!
   email: String!
   phone: String!
-  location: Int!
+  location: String!
 }
 
