@@ -1,4 +1,19 @@
-<script setup lang="ts"></script>
+<script  lang="ts">
+import { useCartStore } from '@/stores/Cart';
+import { computed } from 'vue-demi';
+export default{
+  setup(){
+    const store = useCartStore();
+    return{
+      allCart: computed(()=>store.getCart)
+    }
+  },
+  mounted(){
+    console.log(this.allCart,"cart");
+    
+  }
+}
+</script>
 
 <template>
   <nav class="navbar navbar-expand-lg navbar-light sticky-top">

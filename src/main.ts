@@ -9,9 +9,11 @@ Amplify.configure(awsconfig);
 import Toast from "vue-toastification";
 // Import the CSS or use your own!
 import "vue-toastification/dist/index.css";
-
+// pinia
+import { createPinia } from "pinia";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap";
+// amplify ui styles
 import "@aws-amplify/ui-vue/styles.css";
 import "./assets/main.css";
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -28,7 +30,7 @@ library.add(faCartShopping);
 library.add(faHouse);
 library.add(faPhone);
 library.add(faEnvelope);
-
+const pinia = createPinia();
 const app = createApp(App);
 app.component("font-awesome-icon", FontAwesomeIcon);
 const options = {
@@ -37,5 +39,5 @@ const options = {
 
 app.use(Toast, options);
 app.use(router);
-
+app.use(pinia);
 app.mount("#app");
