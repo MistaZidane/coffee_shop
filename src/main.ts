@@ -12,6 +12,7 @@ import "vue-toastification/dist/index.css";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap";
+import "@aws-amplify/ui-vue/styles.css";
 import "./assets/main.css";
 import { library } from "@fortawesome/fontawesome-svg-core";
 

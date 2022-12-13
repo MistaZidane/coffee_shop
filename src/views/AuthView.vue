@@ -1,12 +1,10 @@
 
 <script setup lang="ts">
 import { Authenticator } from "@aws-amplify/ui-vue";
-import "@aws-amplify/ui-vue/styles.css";
+
 </script>
 <script lang="ts">
 import CartItem from "../components/cartItem.vue";
-
-
 
 export default {
   components: { CartItem },
@@ -29,19 +27,19 @@ export default {
           <div class="row">
             <div class="col-md-5">
               <h1 class="cart-text">
-                Shopping <br />
-                Cart
+                Create <br />
+                an Account
               </h1>
             </div>
             <div class="col-md-3">
-              <h3>Need Assistance?</h3>
+             
              
             </div>
 
             <div class="col-md-4"></div>
           </div>
         </div>
-        <div class="col-12 col-sm-8 bg-free">
+        <div class="col-12 col-sm-12 bg-free">
           <authenticator>
             <template v-slot="{ user, signOut }">
               <h1>Hello {{ user.username }}!</h1>
@@ -49,9 +47,7 @@ export default {
             </template>
           </authenticator>
         </div>
-        <div class="col-12 col-sm-4 p-3 proceed form bg-free">
-        
-        </div>
+      
       </div>
     </div>
   </div>

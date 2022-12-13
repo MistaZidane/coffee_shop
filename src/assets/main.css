@@ -1,9 +1,20 @@
 @import './base.css';
 
-.my-btn{
+.my-btn, .amplify-button, .amplify-button--primary {
   background-color: #1b1b1d;
   color: #eeeff1;
   border-radius: 30px;
+}
+.amplify-tabs-item{
+ border-color: white;
+  color: #1b1b1d;
+}
+.amplify-tabs-item[data-state=active]{
+   border-color: #1b1b1d;
+   color: #1b1b1d;
+}
+.amplify-tabs-item[data-state=inactive]:hover{
+  color: #2c2c2c;
 }
 .my-btn:hover{
   border:  1px solid #1b1b1d;
