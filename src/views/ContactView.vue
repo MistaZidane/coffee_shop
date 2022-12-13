@@ -10,6 +10,11 @@ export default {
   data() {
     return {
       siteInfo: {} as SiteInfo,
+      contactFormInfo: {
+        name: "",
+        email: "",
+        message: "",
+      },
     };
   },
   components: {},
@@ -24,6 +29,11 @@ export default {
       .catch((err) => {
         console.log(err, "err");
       });
+  },
+  methods: {
+    contact() {
+      console.log(this.contactFormInfo);
+    },
   },
 };
 </script>
@@ -67,7 +77,7 @@ export default {
         </div>
         <div class="col-md-8 form-parent pt-5 pb-5">
           <div class="contact-form-wrapper d-flex justify-content-center">
-            <form action="#" class="contact-form">
+            <form class="contact-form" @submit.prevent="contact">
               <h5 class="title">Contact us</h5>
               <p class="description">
                 Feel free to contact us if you need any assistance, any help or
@@ -79,6 +89,7 @@ export default {
                   class="form-control rounded border-white mb-3 form-input"
                   id="name"
                   placeholder="Name"
+                  v-model="contactFormInfo.name"
                   required
                 />
               </div>
@@ -88,6 +99,7 @@ export default {
                   class="form-control rounded border-white mb-3 form-input"
                   placeholder="Email"
                   required
+                  v-model="contactFormInfo.email"
                 />
               </div>
               <div>
@@ -97,6 +109,7 @@ export default {
                   rows="5"
                   cols="30"
                   placeholder="Message"
+                  v-model="contactFormInfo.message"
                   required
                 ></textarea>
               </div>
