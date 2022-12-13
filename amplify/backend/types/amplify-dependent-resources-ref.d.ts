@@ -1,1 +1,9 @@
-export type AmplifyDependentResourcesAttributes = {}
+export type AmplifyDependentResourcesAttributes = {
+    "api": {
+        "coffeeshop": {
+            "GraphQLAPIKeyOutput": "string",
+            "GraphQLAPIIdOutput": "string",
+            "GraphQLAPIEndpointOutput": "string"
+        }
+    }
+}

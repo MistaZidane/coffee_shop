@@ -10,6 +10,11 @@
       "StackName": "amplify-coffeeshop-dev-81913",
       "StackId": "arn:aws:cloudformation:us-east-1:158171624366:stack/amplify-coffeeshop-dev-81913/782a5470-7ab6-11ed-b8d5-0e0879e3efdb",
       "AmplifyAppId": "dct2hg7a0typz"
+    },
+    "categories": {
+      "api": {
+        "coffeeshop": {}
+      }
     }
   }
 }
