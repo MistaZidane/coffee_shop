@@ -42,6 +42,12 @@ const router = createRouter({
       name: 'cart',
       meta: { transition: 'slide-left' },
       component: () => import('../views/CartView.vue')
+    },
+    {
+      path: '/auth',
+      name: 'auth',
+      meta: { transition: 'slide-left' },
+      component: () => import('../views/AuthView.vue')
     }
   ]
 })

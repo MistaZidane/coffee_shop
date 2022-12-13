@@ -104,6 +104,7 @@ export default {
             </div>
           </div>
           <button class="btn btn-lg my-btn">Place Order</button>
+
         </div>
       </div>
     </div>
