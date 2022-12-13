@@ -13,7 +13,7 @@ export default {
     };
   },
   components: {},
-  beforeCreate() {
+  created() {
     getSiteInfo()
       .then((val: any) => {
         let res = val.data.listSiteInfos.items[0];

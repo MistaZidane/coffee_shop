@@ -25,11 +25,13 @@ export default {
 
   <template v-else>
     <Navbar />
-    <router-view v-slot="{ Component }">
+    
+      <router-view v-slot="{ Component }">
       <transition name="slide" mode="out-in">
-        <component :is="Component" />
+       <keep-alive> <component :is="Component"  /></keep-alive>
       </transition>
     </router-view>
+    
   </template>
 </template>
 <style scoped>
