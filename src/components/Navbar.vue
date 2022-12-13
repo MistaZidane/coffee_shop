@@ -5,11 +5,16 @@ export default{
   setup(){
     const store = useCartStore();
     return{
-      allCart: computed(()=>store.getCart)
+      cartLength: computed(()=>store.getCart.length)
     }
   },
+  // data(){
+  //   return {
+  //     totalLength: cartLe
+  //   }
+  // },
   mounted(){
-    console.log(this.allCart,"cart");
+    console.log(this.cartLength,"cart");
     
   }
 }
@@ -46,7 +51,7 @@ export default{
           <li class="nav-item">
             <RouterLink to="/products" class="nav-link">Products</RouterLink>
           </li>
-          <li class="nav-item cart" id="cart">
+          <li class="nav-item cart" id="cart" :data-items-count="cartLength">
             <RouterLink to="/cart" class="nav-link" >
               <font-awesome-icon icon="fa-solid fa-cart-shopping"
             /></RouterLink>

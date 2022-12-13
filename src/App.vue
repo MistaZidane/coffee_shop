@@ -1,5 +1,5 @@
 <script lang="ts">
-import { RouterLink, RouterView } from "vue-router";
+
 import Navbar from "./components/Navbar.vue";
 import SplashScreen from "./components/SplashScreen.vue";
 export default {
@@ -16,7 +16,7 @@ export default {
     setTimeout(() => {
       this.loading = false;
     }, 2000);
-  },
+  }
 };
 </script>
 

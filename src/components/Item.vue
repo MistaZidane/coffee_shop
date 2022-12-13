@@ -1,64 +1,71 @@
-<script  lang="ts">
-export default{
-    data(){
-        return{
-
-        }
+<script lang="ts">
+import { useCartStore } from "@/stores/Cart";
+export default {
+  data() {
+    return {};
+  },
+  props: {
+    name: {
+      type: String,
+      required: true,
     },
-    props:{
-        name:{
-            type: String,
-            required:true
-        },
-        itemId:{
-            type: String,
-            required:true
-        },
-        imgUrl:{
-            type: String,
-            required:true
-        },
-        info:{
-            type: String,
-            required:true
-        },
-        price:{
-            type: Number,
-            required:true
-        }
+    itemId: {
+      type: String,
+      required: true,
     },
-    mounted(){
- 
+    imgUrl: {
+      type: String,
+      required: true,
     },
-    methods:{
-        addToCart(){
-            console.log(this.$props.itemId);
-            let addToCartBtn:any = this.$refs.addToCartBtn;
-            let cart = document.querySelector('#cart');
-            addToCartBtn?.classList.add('sendtocart');
-            setTimeout(()=>{
-                addToCartBtn?.classList.remove("sendtocart")
-                cart?.classList.add('shake')
-                setTimeout(()=>{
-                    cart?.classList.remove('shake')
-                },500)
-            },1000)
-        }
-    }
-}
+    info: {
+      type: String,
+      required: true,
+    },
+    price: {
+      type: Number,
+      required: true,
+    },
+  },
+  mounted() {},
+  methods: {
+    addToCart() {
+      console.log(this.$props.itemId);
+      this.store.addItemToCart({name:"test",info:"test",id:this.$props.itemId, price:200,imgUrl:"../image"})
+      let addToCartBtn: any = this.$refs.addToCartBtn;
+      let cart = document.querySelector("#cart");
+      addToCartBtn?.classList.add("sendtocart");
+      setTimeout(() => {
+        addToCartBtn?.classList.remove("sendtocart");
+        cart?.classList.add("shake");
+        setTimeout(() => {
+          cart?.classList.remove("shake");
+        }, 500);
+      }, 1000);
+    },
+  },
+  setup() {
+    const store = useCartStore();
+    return { store };
+  },
+};
 </script>
 
 <template>
-  <div class="card" >
+  <div class="card">
     <div class="container mt-3">
       <img :src="imgUrl" class="card-img-top" alt="..." />
     </div>
     <div class="card-body">
-      <h5 class="card-title">{{name}}</h5>
-      <p class="card-text">${{price}}:  <span>{{info}}</span></p>
+      <h5 class="card-title">{{ name }}</h5>
+      <p class="card-text">
+        ${{ price }}: <span>{{ info }}</span>
+      </p>
       <!-- <font-awesome-icon icon="fa-solid fa-cart-shopping" /> -->
-     
-      <button @click="addToCart" class="btn my-btn btn-lg"  ref="addToCartBtn">Add to Cart  <span class="cart-item"></span> <font-awesome-icon icon="fa-solid fa-cart-shopping" /></button>
+
+      <button @click="addToCart" class="btn my-btn btn-lg" ref="addToCartBtn">
+        Add to Cart <span class="cart-item"></span>
+        <font-awesome-icon icon="fa-solid fa-cart-shopping" />
+      </button>
     </div>
   </div>
 </template>

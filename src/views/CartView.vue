@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { toRefs } from "vue";
 import { Authenticator, useAuthenticator } from "@aws-amplify/ui-vue";
+import { useCartStore } from "@/stores/Cart";
 // const { route, user, signOut } = toRefs(useAuthenticator());
 const auth = useAuthenticator();
+
 </script>
 <script lang="ts">
 import CartItem from "../components/cartItem.vue";

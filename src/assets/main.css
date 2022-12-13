@@ -27,7 +27,7 @@ html{
 }
 
 .cart:before {
-  content: "0";
+  content: attr(data-items-count);
   font-size: 12px;
   font-weight: 600;
   position: absolute;
