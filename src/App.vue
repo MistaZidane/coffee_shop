@@ -1,5 +1,5 @@
 <script lang="ts">
-
+import { useCartStore } from "@/stores/Cart";
 import Navbar from "./components/Navbar.vue";
 import SplashScreen from "./components/SplashScreen.vue";
 export default {
@@ -15,8 +15,15 @@ export default {
   mounted() {
     setTimeout(() => {
       this.loading = false;
+      this.store.getSavedCart();
     }, 2000);
-  }
+  },
+  setup() {
+    const store = useCartStore();
+    return {
+      store,
+    };
+  },
 };
 </script>
 
@@ -25,13 +32,12 @@ export default {
 
   <template v-else>
     <Navbar />
-    
-      <router-view v-slot="{ Component }">
+
+    <router-view v-slot="{ Component }">
       <transition name="slide" mode="out-in">
-       <keep-alive> <component :is="Component"  /></keep-alive>
+        <keep-alive> <component :is="Component" /></keep-alive>
       </transition>
     </router-view>
-    
   </template>
 </template>
 <style scoped>

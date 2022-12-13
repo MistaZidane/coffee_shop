@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-
+import { getcartItems } from "@/helper/LocalstorageHelper";
 interface CartItem {
   name: string;
   info: string;
@@ -17,7 +17,9 @@ export const useCartStore = defineStore("cart", {
       this.cart.push(item);
     },
     getSavedCart() {
-
+        getcartItems().then(val=>{
+            this.cart = val;
+        })
     },
   },
 });

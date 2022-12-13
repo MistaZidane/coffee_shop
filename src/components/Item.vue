@@ -1,5 +1,6 @@
 <script lang="ts">
 import { useCartStore } from "@/stores/Cart";
+import { addItem } from "@/helper/LocalstorageHelper";
 export default {
   data() {
     return {};
@@ -29,13 +30,17 @@ export default {
   mounted() {},
   methods: {
     addToCart() {
-      this.store.addItemToCart({
+      addItem({
         name: this.$props.name,
         info: this.$props.info,
         id: this.$props.itemId,
         price: this.$props.price,
         imgUrl: this.$props.imgUrl,
-      });
+      })
+        .then((val) => {
+          this.store.getSavedCart();
+        })
+        .catch((err) => {});
       let addToCartBtn: any = this.$refs.addToCartBtn;
       let cart = document.querySelector("#cart");
       addToCartBtn?.classList.add("sendtocart");
