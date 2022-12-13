@@ -1,5 +1,5 @@
 <script lang="ts">
-import { getSiteInfo } from "@/services/api";
+import { getSiteInfo, createContacts } from "@/services/api";
 interface SiteInfo {
   email: string;
   phone: string;
@@ -32,7 +32,17 @@ export default {
   },
   methods: {
     contact() {
-      console.log(this.contactFormInfo);
+      createContacts(
+        this.contactFormInfo.email,
+        this.contactFormInfo.message,
+        this.contactFormInfo.name
+      )
+        .then((val: any) => {
+          console.log(val);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     },
   },
 };
