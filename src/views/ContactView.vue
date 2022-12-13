@@ -38,7 +38,7 @@ export default {
         this.contactFormInfo.name
       )
         .then((val: any) => {
-          console.log(val);
+          
         })
         .catch((err) => {
           console.log(err);

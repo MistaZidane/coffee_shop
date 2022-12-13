@@ -6,8 +6,9 @@ import { Amplify, API, graphqlOperation } from "aws-amplify";
 import awsconfig from "./aws-exports";
 Amplify.configure(awsconfig);
 // vue toast
-import * as VueToast from "vue-toast-notification";
-import "vue-toast-notification/dist/theme-sugar.css";
+import Toast, {PluginOptions} from "vue-toastification";
+// Import the CSS or use your own!
+import "vue-toastification/dist/index.css";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap";
@@ -29,9 +30,11 @@ library.add(faEnvelope);
 
 const app = createApp(App);
 app.component("font-awesome-icon", FontAwesomeIcon);
-app.use(VueToast.default, {
-  position: 'top'
-})
+const options:PluginOptions = {
+  // You can set your default options here
+};
+
+app.use(Toast, options);
 app.use(router);
 
 app.mount("#app");
