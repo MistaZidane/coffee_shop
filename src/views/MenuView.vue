@@ -1,5 +1,6 @@
 <script lang="ts">
 import Item from "@/components/Item.vue";
+import Loader from "@/components/Loader.vue";
 import { useProductStore } from "@/stores/product";
 import { computed } from "vue";
 
@@ -13,14 +14,21 @@ interface Product {
 export default {
   components: {
     Item,
+    Loader,
   },
   setup() {
     const store = useProductStore();
     store.fetchProducts();
     const products: any = computed(() => store.products);
+
     return {
       products,
     };
+  },
+  data() {
+    return{
+      isLoading: true
+    }
   },
 };
 </script>
@@ -31,19 +39,24 @@ export default {
       <div></div>
       <div><p class="lead mb-5 mt-4">Shop our fresh roasted coffees</p></div>
       <div class="row">
-        <div
-          class="col-md-4 g-3"
-          v-for="(item, index) in products"
-          :key="index"
-        >
-          <Item
-            :name="item.name"
-            :price="item.price"
-            :itemId="item.id"
-            :imgUrl="item.imgUrl"
-            :info="item.info"
-          />
+        <div v-if="products.length<1" class="d-flex text-center align-items-center justify-content-center">
+           <loader ></loader>
         </div>
+        <template v-else>
+          <div
+            class="col-md-4 g-3"
+            v-for="(item, index) in products"
+            :key="index"
+          >
+            <Item
+              :name="item.name"
+              :price="item.price"
+              :itemId="item.id"
+              :imgUrl="item.imgUrl"
+              :info="item.info"
+            />
+          </div>
+        </template>
       </div>
     </div>
   </div>
