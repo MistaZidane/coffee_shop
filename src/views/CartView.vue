@@ -5,7 +5,13 @@ import { useCartStore } from "@/stores/Cart";
 // const { route, user, signOut } = toRefs(useAuthenticator());
 const auth = useAuthenticator();
 const store = useCartStore();
-const cartItems = computed(()=>store.cart);
+const cartItems = computed(() => store.cart);
+
+const totalPrice = computed(() =>
+  store.cart.reduce((a: any, b: any) => {
+    return a.price + b.price;
+  })
+);
 </script>
 <script lang="ts">
 import CartItem from "../components/cartItem.vue";
@@ -35,6 +41,10 @@ export default {
       .catch((err) => {
         console.log(err, "err");
       });
+  },
+  mounted() {
+    // store.getSavedCart();
+    // console.log(totalPrice);
   },
 };
 </script>
@@ -68,9 +78,9 @@ export default {
         <div class="col-12 col-sm-8 bg-free">
           <!--1-->
 
-          <CartItem 
-          v-for="item in cartItems"
-          :key="item.id"
+          <CartItem
+            v-for="item in cartItems"
+            :key="item.id"
             :name="item.name"
             :price="item.price"
             :info="item.info"
@@ -100,7 +110,7 @@ export default {
               <h5 class="total">Total</h5>
             </div>
             <div class="col-sm-4 p-0">
-              <p id="total">$138.40</p>
+              <p id="total">${{ totalPrice }}</p>
             </div>
           </div>
 
