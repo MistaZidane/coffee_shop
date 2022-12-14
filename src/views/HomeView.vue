@@ -11,9 +11,4 @@ export default{
 </transition>
 </template>
 <style>
-/*
-  Enter and leave animations can use different
-  durations and timing functions.
-*/
-
 </style>
