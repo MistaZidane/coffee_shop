@@ -10,7 +10,6 @@ interface SiteInfo {
 
 export default {
   setup() {
-    // Get toast interface
     const toast = useToast();
     return { toast };
   },
@@ -158,7 +157,6 @@ export default {
 
 <style scoped>
 .img-section {
-  /* background: url('../assets/menu1.jpg'); */
   filter: grayscale();
 }
 
@@ -166,7 +164,6 @@ export default {
   padding: 30px 40px;
   background-color: #ffffff;
   border-radius: 12px;
-  /* max-width: 400px; */
 }
 
 .contact-form textarea {
@@ -222,7 +219,6 @@ export default {
   background: url("../assets/more1.jpg");
   filter: grayscale();
   background-size: cover;
-  /* background-color: black; */
 }
 .icons {
   font-size: 30px;
