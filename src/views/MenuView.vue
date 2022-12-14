@@ -3,14 +3,6 @@ import Item from "@/components/Item.vue";
 import Loader from "@/components/Loader.vue";
 import { useProductStore } from "@/stores/product";
 import { computed } from "vue";
-
-interface Product {
-  info: string;
-  id: string;
-  imgUrl: string;
-  name: string;
-  price: number;
-}
 export default {
   components: {
     Item,
