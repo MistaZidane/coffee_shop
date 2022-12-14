@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import { toRefs } from "vue";
+import { computed, toRefs } from "vue";
 import { Authenticator, useAuthenticator } from "@aws-amplify/ui-vue";
 import { useCartStore } from "@/stores/Cart";
 // const { route, user, signOut } = toRefs(useAuthenticator());
 const auth = useAuthenticator();
-
+const store = useCartStore();
+const cartItems = computed(()=>store.cart);
 </script>
 <script lang="ts">
 import CartItem from "../components/cartItem.vue";
@@ -66,18 +67,14 @@ export default {
         </div>
         <div class="col-12 col-sm-8 bg-free">
           <!--1-->
-          <CartItem
-            name="Freya Dark Roast"
-            :price="100"
-            info="Honey • Caramel • Molasses. Bold, robust, and smoky chocolate"
-            item-id="1"
-          />
 
-          <CartItem
-            name="Thor House Blend"
-            :price="120"
-            info="Raw Sugar • Chocolate Liquor • Berries.  Bold lively and bright."
-            item-id="1"
+          <CartItem 
+          v-for="item in cartItems"
+          :key="item.id"
+            :name="item.name"
+            :price="item.price"
+            :info="item.info"
+            :item-id="item.id"
           />
         </div>
         <div class="col-12 col-sm-4 p-3 proceed form bg-free">
