@@ -33,5 +33,5 @@ export const removeItem = async (id: string) => {
   const filtered = items.filter((a: any) => a.id != id);
   console.log(filtered, "filtered");
 
-  //   await localStorage.setItem("cart", JSON.stringify(items));
+    await localStorage.setItem("cart", JSON.stringify(filtered));
 };

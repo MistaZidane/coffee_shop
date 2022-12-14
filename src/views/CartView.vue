@@ -82,6 +82,8 @@ export default {
             :price="item.price"
             :info="item.info"
             :item-id="item.id"
+            :number="item.number"
+            :imgUrl="item.imgUrl"
           />
         </div>
         <div class="col-12 col-sm-4 p-3 proceed form bg-free">

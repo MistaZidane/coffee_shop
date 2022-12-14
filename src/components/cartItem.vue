@@ -1,4 +1,6 @@
 <script lang="ts">
+import { useCartStore } from "@/stores/Cart";
+import { removeItem,addItem } from "@/helper/LocalstorageHelper";
 export default {
   props: {
     name: {
@@ -13,10 +15,54 @@ export default {
       type: String,
       required: true,
     },
+    imgUrl: {
+      type: String,
+      required: true,
+    },
     price: {
       type: Number,
       required: true,
     },
+    number: {
+      type: Number,
+      required: true,
+    },
+  },
+  data() {
+    return {
+      itemNumber: this.$props.number,
+    };
+  },
+  methods: {
+    increament() {
+      this.itemNumber++;
+      addItem({
+        name: this.$props.name,
+        info: this.$props.info,
+        id: this.$props.itemId,
+        price: this.$props.price,
+        imgUrl: this.$props.imgUrl,
+        number:this.itemNumber
+      })
+        .then((val) => {
+          this.store.getSavedCart();
+        })
+        .catch((err) => {});
+    },
+    decreament() {
+      if (this.itemNumber == 1) {
+        removeItem(this.$props.itemId)
+          .then((val) => {
+            this.store.getSavedCart();
+          })
+          .catch((err) => {});
+      }
+      this.itemNumber--;
+    },
+  },
+  setup() {
+    const store = useCartStore();
+    return { store };
   },
 };
 </script>
@@ -33,9 +79,9 @@ export default {
     <div
       class="col-2 d-flex justify-content-center align-items-center text-center"
     >
-      <button class="cart-btn">+</button>
-      <input type="text" class="cart-input">
-      <button class="cart-btn">-</button>
+      <button class="cart-btn" @click="decreament">-</button>
+      <input type="text" class="cart-input" v-model="itemNumber" />
+      <button class="cart-btn" @click="increament">+</button>
     </div>
     <div class="col-2">
       <p class="cartItem1Price">${{ price }}</p>
@@ -57,7 +103,7 @@ export default {
   padding: 2px 7px;
   border-radius: 0;
 }
-.cart-input{
+.cart-input {
   width: 50px;
   border-radius: 0;
   border: 1px solid black;

@@ -6,6 +6,7 @@ interface CartItem {
   price: number;
   imgUrl: string;
   id: string;
+  number:number
 }
 export const useCartStore = defineStore("cart", {
   state: () => ({ cart: [] as CartItem[] }),
