@@ -132,7 +132,7 @@ export type DeleteProductInput = {
   id: string,
 };
 
-export type CreateCartInput = {
+export type CreateCartsInput = {
   id?: string | null,
   name: string,
   info: string,
@@ -141,19 +141,19 @@ export type CreateCartInput = {
   number: number,
 };
 
-export type ModelCartConditionInput = {
+export type ModelCartsConditionInput = {
   name?: ModelStringInput | null,
   info?: ModelStringInput | null,
   price?: ModelIntInput | null,
   imgUrl?: ModelStringInput | null,
   number?: ModelIntInput | null,
-  and?: Array< ModelCartConditionInput | null > | null,
-  or?: Array< ModelCartConditionInput | null > | null,
-  not?: ModelCartConditionInput | null,
+  and?: Array< ModelCartsConditionInput | null > | null,
+  or?: Array< ModelCartsConditionInput | null > | null,
+  not?: ModelCartsConditionInput | null,
 };
 
-export type Cart = {
-  __typename: "Cart",
+export type Carts = {
+  __typename: "Carts",
   id: string,
   name: string,
   info: string,
@@ -164,7 +164,7 @@ export type Cart = {
   updatedAt: string,
 };
 
-export type UpdateCartInput = {
+export type UpdateCartsInput = {
   id: string,
   name?: string | null,
   info?: string | null,
@@ -173,7 +173,7 @@ export type UpdateCartInput = {
   number?: number | null,
 };
 
-export type DeleteCartInput = {
+export type DeleteCartsInput = {
   id: string,
 };
 
@@ -263,21 +263,21 @@ export type ModelProductConnection = {
   nextToken?: string | null,
 };
 
-export type ModelCartFilterInput = {
+export type ModelCartsFilterInput = {
   id?: ModelIDInput | null,
   name?: ModelStringInput | null,
   info?: ModelStringInput | null,
   price?: ModelIntInput | null,
   imgUrl?: ModelStringInput | null,
   number?: ModelIntInput | null,
-  and?: Array< ModelCartFilterInput | null > | null,
-  or?: Array< ModelCartFilterInput | null > | null,
-  not?: ModelCartFilterInput | null,
+  and?: Array< ModelCartsFilterInput | null > | null,
+  or?: Array< ModelCartsFilterInput | null > | null,
+  not?: ModelCartsFilterInput | null,
 };
 
-export type ModelCartConnection = {
-  __typename: "ModelCartConnection",
-  items:  Array<Cart | null >,
+export type ModelCartsConnection = {
+  __typename: "ModelCartsConnection",
+  items:  Array<Carts | null >,
   nextToken?: string | null,
 };
 
@@ -358,15 +358,15 @@ export type ModelSubscriptionIntInput = {
   notIn?: Array< number | null > | null,
 };
 
-export type ModelSubscriptionCartFilterInput = {
+export type ModelSubscriptionCartsFilterInput = {
   id?: ModelSubscriptionIDInput | null,
   name?: ModelSubscriptionStringInput | null,
   info?: ModelSubscriptionStringInput | null,
   price?: ModelSubscriptionIntInput | null,
   imgUrl?: ModelSubscriptionStringInput | null,
   number?: ModelSubscriptionIntInput | null,
-  and?: Array< ModelSubscriptionCartFilterInput | null > | null,
-  or?: Array< ModelSubscriptionCartFilterInput | null > | null,
+  and?: Array< ModelSubscriptionCartsFilterInput | null > | null,
+  or?: Array< ModelSubscriptionCartsFilterInput | null > | null,
 };
 
 export type ModelSubscriptionSiteInfoFilterInput = {
@@ -483,14 +483,14 @@ export type DeleteProductMutation = {
   } | null,
 };
 
-export type CreateCartMutationVariables = {
-  input: CreateCartInput,
-  condition?: ModelCartConditionInput | null,
+export type CreateCartsMutationVariables = {
+  input: CreateCartsInput,
+  condition?: ModelCartsConditionInput | null,
 };
 
-export type CreateCartMutation = {
-  createCart?:  {
-    __typename: "Cart",
+export type CreateCartsMutation = {
+  createCarts?:  {
+    __typename: "Carts",
     id: string,
     name: string,
     info: string,
@@ -502,14 +502,14 @@ export type CreateCartMutation = {
   } | null,
 };
 
-export type UpdateCartMutationVariables = {
-  input: UpdateCartInput,
-  condition?: ModelCartConditionInput | null,
+export type UpdateCartsMutationVariables = {
+  input: UpdateCartsInput,
+  condition?: ModelCartsConditionInput | null,
 };
 
-export type UpdateCartMutation = {
-  updateCart?:  {
-    __typename: "Cart",
+export type UpdateCartsMutation = {
+  updateCarts?:  {
+    __typename: "Carts",
     id: string,
     name: string,
     info: string,
@@ -521,14 +521,14 @@ export type UpdateCartMutation = {
   } | null,
 };
 
-export type DeleteCartMutationVariables = {
-  input: DeleteCartInput,
-  condition?: ModelCartConditionInput | null,
+export type DeleteCartsMutationVariables = {
+  input: DeleteCartsInput,
+  condition?: ModelCartsConditionInput | null,
 };
 
-export type DeleteCartMutation = {
-  deleteCart?:  {
-    __typename: "Cart",
+export type DeleteCartsMutation = {
+  deleteCarts?:  {
+    __typename: "Carts",
     id: string,
     name: string,
     info: string,
@@ -669,13 +669,13 @@ export type ListProductsQuery = {
   } | null,
 };
 
-export type GetCartQueryVariables = {
+export type GetCartsQueryVariables = {
   id: string,
 };
 
-export type GetCartQuery = {
-  getCart?:  {
-    __typename: "Cart",
+export type GetCartsQuery = {
+  getCarts?:  {
+    __typename: "Carts",
     id: string,
     name: string,
     info: string,
@@ -688,16 +688,16 @@ export type GetCartQuery = {
 };
 
 export type ListCartsQueryVariables = {
-  filter?: ModelCartFilterInput | null,
+  filter?: ModelCartsFilterInput | null,
   limit?: number | null,
   nextToken?: string | null,
 };
 
 export type ListCartsQuery = {
   listCarts?:  {
-    __typename: "ModelCartConnection",
+    __typename: "ModelCartsConnection",
     items:  Array< {
-      __typename: "Cart",
+      __typename: "Carts",
       id: string,
       name: string,
       info: string,
@@ -848,13 +848,13 @@ export type OnDeleteProductSubscription = {
   } | null,
 };
 
-export type OnCreateCartSubscriptionVariables = {
-  filter?: ModelSubscriptionCartFilterInput | null,
+export type OnCreateCartsSubscriptionVariables = {
+  filter?: ModelSubscriptionCartsFilterInput | null,
 };
 
-export type OnCreateCartSubscription = {
-  onCreateCart?:  {
-    __typename: "Cart",
+export type OnCreateCartsSubscription = {
+  onCreateCarts?:  {
+    __typename: "Carts",
     id: string,
     name: string,
     info: string,
@@ -866,13 +866,13 @@ export type OnCreateCartSubscription = {
   } | null,
 };
 
-export type OnUpdateCartSubscriptionVariables = {
-  filter?: ModelSubscriptionCartFilterInput | null,
+export type OnUpdateCartsSubscriptionVariables = {
+  filter?: ModelSubscriptionCartsFilterInput | null,
 };
 
-export type OnUpdateCartSubscription = {
-  onUpdateCart?:  {
-    __typename: "Cart",
+export type OnUpdateCartsSubscription = {
+  onUpdateCarts?:  {
+    __typename: "Carts",
     id: string,
     name: string,
     info: string,
@@ -884,13 +884,13 @@ export type OnUpdateCartSubscription = {
   } | null,
 };
 
-export type OnDeleteCartSubscriptionVariables = {
-  filter?: ModelSubscriptionCartFilterInput | null,
+export type OnDeleteCartsSubscriptionVariables = {
+  filter?: ModelSubscriptionCartsFilterInput | null,
 };
 
-export type OnDeleteCartSubscription = {
-  onDeleteCart?:  {
-    __typename: "Cart",
+export type OnDeleteCartsSubscription = {
+  onDeleteCarts?:  {
+    __typename: "Carts",
     id: string,
     name: string,
     info: string,

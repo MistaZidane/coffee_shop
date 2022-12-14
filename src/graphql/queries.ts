@@ -66,9 +66,9 @@ export const listProducts = /* GraphQL */ `
     }
   }
 `;
-export const getCart = /* GraphQL */ `
-  query GetCart($id: ID!) {
-    getCart(id: $id) {
+export const getCarts = /* GraphQL */ `
+  query GetCarts($id: ID!) {
+    getCarts(id: $id) {
       id
       name
       info
@@ -82,7 +82,7 @@ export const getCart = /* GraphQL */ `
 `;
 export const listCarts = /* GraphQL */ `
   query ListCarts(
-    $filter: ModelCartFilterInput
+    $filter: ModelCartsFilterInput
     $limit: Int
     $nextToken: String
   ) {

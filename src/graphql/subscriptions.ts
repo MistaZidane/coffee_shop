@@ -77,9 +77,9 @@ export const onDeleteProduct = /* GraphQL */ `
     }
   }
 `;
-export const onCreateCart = /* GraphQL */ `
-  subscription OnCreateCart($filter: ModelSubscriptionCartFilterInput) {
-    onCreateCart(filter: $filter) {
+export const onCreateCarts = /* GraphQL */ `
+  subscription OnCreateCarts($filter: ModelSubscriptionCartsFilterInput) {
+    onCreateCarts(filter: $filter) {
       id
       name
       info
@@ -91,9 +91,9 @@ export const onCreateCart = /* GraphQL */ `
     }
   }
 `;
-export const onUpdateCart = /* GraphQL */ `
-  subscription OnUpdateCart($filter: ModelSubscriptionCartFilterInput) {
-    onUpdateCart(filter: $filter) {
+export const onUpdateCarts = /* GraphQL */ `
+  subscription OnUpdateCarts($filter: ModelSubscriptionCartsFilterInput) {
+    onUpdateCarts(filter: $filter) {
       id
       name
       info
@@ -105,9 +105,9 @@ export const onUpdateCart = /* GraphQL */ `
     }
   }
 `;
-export const onDeleteCart = /* GraphQL */ `
-  subscription OnDeleteCart($filter: ModelSubscriptionCartFilterInput) {
-    onDeleteCart(filter: $filter) {
+export const onDeleteCarts = /* GraphQL */ `
+  subscription OnDeleteCarts($filter: ModelSubscriptionCartsFilterInput) {
+    onDeleteCarts(filter: $filter) {
       id
       name
       info

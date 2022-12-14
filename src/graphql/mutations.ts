@@ -95,12 +95,12 @@ export const deleteProduct = /* GraphQL */ `
     }
   }
 `;
-export const createCart = /* GraphQL */ `
-  mutation CreateCart(
-    $input: CreateCartInput!
-    $condition: ModelCartConditionInput
+export const createCarts = /* GraphQL */ `
+  mutation CreateCarts(
+    $input: CreateCartsInput!
+    $condition: ModelCartsConditionInput
   ) {
-    createCart(input: $input, condition: $condition) {
+    createCarts(input: $input, condition: $condition) {
       id
       name
       info
@@ -112,12 +112,12 @@ export const createCart = /* GraphQL */ `
     }
   }
 `;
-export const updateCart = /* GraphQL */ `
-  mutation UpdateCart(
-    $input: UpdateCartInput!
-    $condition: ModelCartConditionInput
+export const updateCarts = /* GraphQL */ `
+  mutation UpdateCarts(
+    $input: UpdateCartsInput!
+    $condition: ModelCartsConditionInput
   ) {
-    updateCart(input: $input, condition: $condition) {
+    updateCarts(input: $input, condition: $condition) {
       id
       name
       info
@@ -129,12 +129,12 @@ export const updateCart = /* GraphQL */ `
     }
   }
 `;
-export const deleteCart = /* GraphQL */ `
-  mutation DeleteCart(
-    $input: DeleteCartInput!
-    $condition: ModelCartConditionInput
+export const deleteCarts = /* GraphQL */ `
+  mutation DeleteCarts(
+    $input: DeleteCartsInput!
+    $condition: ModelCartsConditionInput
   ) {
-    deleteCart(input: $input, condition: $condition) {
+    deleteCarts(input: $input, condition: $condition) {
       id
       name
       info

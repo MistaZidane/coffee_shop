@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, toRefs } from "vue";
 import { Authenticator, useAuthenticator } from "@aws-amplify/ui-vue";
+import { getSiteInfo, createOrder } from "@/services/api";
 import { useCartStore } from "@/stores/Cart";
 import { useToast } from "vue-toastification";
 // const { route, user, signOut } = toRefs(useAuthenticator());
@@ -16,7 +17,7 @@ const tot = computed(() =>
 </script>
 <script lang="ts">
 import CartItem from "../components/cartItem.vue";
-import { getSiteInfo, createOrder } from "@/services/api";
+
 import Loader from "@/components/Loader.vue";
 interface SiteInfo {
   email: string;
@@ -39,8 +40,10 @@ export default {
       const toast = useToast();
       const store = useCartStore();
       allItems.forEach((a: any, index: number) => {
-        createOrder(a)
+        createOrder(a.name, a.imgUrl, a.price, a.number, a.info)
           .then((val) => {
+            console.log(val, "placed");
+
             if (index == allItems.length - 1) {
               toast.success("Order Placed! We will get back to you shortly");
               localStorage.removeItem("cart");
@@ -48,7 +51,9 @@ export default {
               this.isLoading = false;
             }
           })
-          .catch((err) => {});
+          .catch((err) => {
+            console.log(err, "errrr");
+          });
       });
     },
   },

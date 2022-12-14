@@ -16,14 +16,13 @@ type Product @model {
   price: Int!
   imgUrl: String!
 }
-type Cart @model {
+type Carts @model {
   id: ID!
   name: String!
   info: String!
   price: Int!
   imgUrl: String!
   number: Int!
-  userId: String!
 }
 
 type SiteInfo @model {

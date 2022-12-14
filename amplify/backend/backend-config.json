@@ -3,13 +3,23 @@
     "coffeeshop": {
       "service": "AppSync",
       "providerPlugin": "awscloudformation",
-      "dependsOn": [],
+      "dependsOn": [
+        {
+          "category": "auth",
+          "resourceName": "coffeeshopc7461551",
+          "attributes": [
+            "UserPoolId"
+          ]
+        }
+      ],
       "output": {
         "authConfig": {
           "defaultAuthentication": {
             "authenticationType": "API_KEY",
             "apiKeyConfig": {
-              "apiKeyExpirationDays": 7
+              "apiKeyExpirationDays": 7,
+              "apiKeyExpirationDate": "2022-12-21T13:06:15.235Z",
+              "description": ""
             }
           },
           "additionalAuthenticationProviders": [

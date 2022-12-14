@@ -1,6 +1,6 @@
 import { API, graphqlOperation } from "aws-amplify";
 import { listSiteInfos, listProducts } from "@/graphql/queries";
-import { createContact, createCart } from "@/graphql/mutations";
+import { createContact, createCarts } from "@/graphql/mutations";
 interface CartItem {
   name: string;
   info: string;
@@ -34,10 +34,22 @@ export const createContacts = async (
   return results;
 };
 
-export const createOrder = async (obj: CartItem) => {
+export const createOrder = async (
+  name: string,
+  imgUrl: string,
+  price: number,
+  number: number,
+  info: string
+) => {
   const results = await API.graphql(
-    graphqlOperation(createCart, {
-      input: obj,
+    graphqlOperation(createCarts, {
+      input: {
+        name,
+        imgUrl,
+        info,
+        number,
+        price,
+      },
     })
   );
   return results;
