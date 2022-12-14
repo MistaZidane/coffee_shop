@@ -36,7 +36,7 @@ export const createContacts = async (
 
 export const createOrder = async (obj: CartItem) => {
   const results = await API.graphql(
-    graphqlOperation(createContact, {
+    graphqlOperation(createCart, {
       input: obj,
     })
   );

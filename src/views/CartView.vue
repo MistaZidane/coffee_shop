@@ -2,15 +2,18 @@
 import { computed, toRefs } from "vue";
 import { Authenticator, useAuthenticator } from "@aws-amplify/ui-vue";
 import { useCartStore } from "@/stores/Cart";
+import { useToast } from "vue-toastification";
 // const { route, user, signOut } = toRefs(useAuthenticator());
 const auth = useAuthenticator();
 const store = useCartStore();
 const cartItems = computed(() => store.cart);
-const tot = computed(()=> store.cart.reduce((a, b) => a + b.price * b.number, 0))
+const tot = computed(() =>
+  store.cart.reduce((a, b) => a + b.price * b.number, 0)
+);
 </script>
 <script lang="ts">
 import CartItem from "../components/cartItem.vue";
-import { getSiteInfo } from "@/services/api";
+import { getSiteInfo, createOrder } from "@/services/api";
 
 interface SiteInfo {
   email: string;
@@ -27,8 +30,20 @@ export default {
     };
   },
   methods: {
-    getTotal() {
-      return cartItems.value.reduce((a: any, b: any) => a.price + b.price, 0);
+    placeOrder(allItems: any) {
+      const toast = useToast();
+      allItems.forEach((a: any, index: number) => {
+        createOrder(a)
+          .then((val) => {
+            console.log(val, "Place order orders");
+            if (index == allItems.length - 1) {
+              toast.success("Order Placed! We will get back to you shortly");
+            }
+          })
+          .catch((err) => {
+            console.log(err, "failed to insert");
+          });
+      });
     },
   },
   beforeCreate() {
@@ -72,7 +87,7 @@ export default {
             <div class="col-md-4"></div>
           </div>
         </div>
-        <div class="col-12 col-sm-8 bg-free" v-if="cartItems.length >0">
+        <div class="col-12 col-sm-8 bg-free" v-if="cartItems.length > 0">
           <!--1-->
 
           <CartItem
@@ -88,7 +103,9 @@ export default {
         </div>
         <div v-else class="col-12 col-sm-8 bg-free">
           <h1>Hello Your cart is empty!</h1>
-              <RouterLink to="/menu"  class="btn my-btn btn-lg">Continue shopping</RouterLink>
+          <RouterLink to="/menu" class="btn my-btn btn-lg"
+            >Continue shopping</RouterLink
+          >
         </div>
         <div class="col-12 col-sm-4 p-3 proceed form bg-free">
           <div class="row m-0">
@@ -118,7 +135,9 @@ export default {
           </div>
 
           <template v-if="auth.authStatus === 'authenticated'">
-            <button class="btn btn-lg my-btn">Place Order</button>
+            <button class="btn btn-lg my-btn" @click="placeOrder(cartItems)">
+              Place Order
+            </button>
           </template>
           <template v-else>
             <p>Please login or Create an account to place and order.</p>
