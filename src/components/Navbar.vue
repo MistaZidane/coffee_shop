@@ -8,14 +8,8 @@ export default{
       cartLength: computed(()=>store.getCart.length)
     }
   },
-  // data(){
-  //   return {
-  //     totalLength: cartLe
-  //   }
-  // },
   mounted(){
     console.log(this.cartLength,"cart");
-    
   }
 }
 </script>
