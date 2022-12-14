@@ -12,7 +12,6 @@ export const useCartStore = defineStore("cart", {
   state: () => ({ cart: [] as CartItem[] }),
   getters: {
     getCart: (state) => state.cart,
-    getTotalPrice: (state)=> state.cart.reduce((a:any,b:any)=>a.price+b.price)
   },
   actions: {
     addItemToCart(item: CartItem) {
@@ -21,6 +20,8 @@ export const useCartStore = defineStore("cart", {
     getSavedCart() {
         getcartItems().then(val=>{
             this.cart = val;
+        }).catch(err=>{
+            
         })
     },
   },
