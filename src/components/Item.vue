@@ -36,6 +36,7 @@ export default {
         id: this.$props.itemId,
         price: this.$props.price,
         imgUrl: this.$props.imgUrl,
+        number:1
       })
         .then((val) => {
           this.store.getSavedCart();
