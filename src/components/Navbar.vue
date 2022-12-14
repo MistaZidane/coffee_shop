@@ -48,9 +48,7 @@ export default{
           <li class="nav-item">
             <RouterLink to="/contact" class="nav-link">Contact Us</RouterLink>
           </li>
-          <li class="nav-item">
-            <RouterLink to="/products" class="nav-link">Products</RouterLink>
-          </li>
+
           <li class="nav-item cart" id="cart" :data-items-count="cartLength">
             <RouterLink to="/cart" class="nav-link" >
               <font-awesome-icon icon="fa-solid fa-cart-shopping"
