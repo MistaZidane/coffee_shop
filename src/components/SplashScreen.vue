@@ -44,7 +44,6 @@ export default {
   right: 0;
   top: 0;
   flex-direction: column;
-  /* height: 100vh; */
 }
 img {
   height: 60px;
@@ -64,7 +63,6 @@ img {
 .waviy {
   position: relative;
   -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0,0,0,.2));
-  /* font-size: 100px; */
 }
 .waviy span {
   position: relative;
