@@ -47,7 +47,6 @@ export default {
           </p>
         </div>
         <div class="col-md-1">
-          <!-- <img src="../assets/menu1.jpg" alt="" class="img-fluid" /> -->
         </div>
       </div>
     </div>
