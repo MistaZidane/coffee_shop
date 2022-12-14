@@ -71,7 +71,6 @@ export default {
           })
           .catch((err) => {});
       }
-      
     },
   },
   setup() {

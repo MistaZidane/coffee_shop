@@ -7,6 +7,9 @@ import { useToast } from "vue-toastification";
 const auth = useAuthenticator();
 const store = useCartStore();
 const cartItems = computed(() => store.cart);
+const refresh = ()=>{
+  store.refreshCart()
+}
 const tot = computed(() =>
   store.cart.reduce((a, b) => a + b.price * b.number, 0)
 );
@@ -32,17 +35,17 @@ export default {
   methods: {
     placeOrder(allItems: any) {
       const toast = useToast();
+      const store = useCartStore();
       allItems.forEach((a: any, index: number) => {
         createOrder(a)
           .then((val) => {
-            console.log(val, "Place order orders");
             if (index == allItems.length - 1) {
               toast.success("Order Placed! We will get back to you shortly");
+              localStorage.removeItem("cart");
+              store.refreshCart()
             }
           })
-          .catch((err) => {
-            console.log(err, "failed to insert");
-          });
+          .catch((err) => {});
       });
     },
   },

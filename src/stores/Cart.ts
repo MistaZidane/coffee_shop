@@ -18,6 +18,9 @@ export const useCartStore = defineStore("cart", {
     addItemToCart(item: CartItem) {
       this.cart.push(item);
     },
+    refreshCart(){
+        this.cart = [];
+    },
     getSavedCart() {
         getcartItems().then(val=>{
             this.cart = val;
