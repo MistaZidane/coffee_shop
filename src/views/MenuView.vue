@@ -1,6 +1,5 @@
 <script lang="ts">
 import Item from "@/components/Item.vue";
-// import { getProducts } from "@/services/api";
 import { useProductStore } from "@/stores/product";
 import { computed } from "vue";
 
@@ -14,18 +13,6 @@ interface Product {
 export default {
   components: {
     Item,
-  },
-  data() {
-    return {
-      // products: [] as Product[],
-    };
-  },
-  beforeCreate() {
-    // getProducts()
-    //   .then((val: any) => {
-    //     this.products = val.data.listProducts.items;
-    //   })
-    //   .catch((err) => {});
   },
   setup() {
     const store = useProductStore();
