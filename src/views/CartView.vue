@@ -72,7 +72,7 @@ export default {
             <div class="col-md-4"></div>
           </div>
         </div>
-        <div class="col-12 col-sm-8 bg-free">
+        <div class="col-12 col-sm-8 bg-free" v-if="cartItems.length >0">
           <!--1-->
 
           <CartItem
@@ -85,6 +85,10 @@ export default {
             :number="item.number"
             :imgUrl="item.imgUrl"
           />
+        </div>
+        <div v-else class="col-12 col-sm-8 bg-free">
+          <h1>Hello Your cart is empty!</h1>
+              <RouterLink to="/menu"  class="btn my-btn btn-lg">Continue shopping</RouterLink>
         </div>
         <div class="col-12 col-sm-4 p-3 proceed form bg-free">
           <div class="row m-0">
