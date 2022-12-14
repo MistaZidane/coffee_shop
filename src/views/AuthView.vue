@@ -1,8 +1,6 @@
 
 <script setup lang="ts">
- import { toRefs } from 'vue';
 import { Authenticator,useAuthenticator } from "@aws-amplify/ui-vue";
-// const { route, user, signOut } = toRefs(useAuthenticator());
 const auth = useAuthenticator();
 </script>
 <script lang="ts">
@@ -34,10 +32,7 @@ export default {
               </h1>
             </div>
             <div class="col-md-3">
-             
-             
             </div>
-
             <div class="col-md-4"></div>
           </div>
         </div>
@@ -50,7 +45,6 @@ export default {
             </template>
           </authenticator>
         </div>
-      
       </div>
     </div>
   </div>
@@ -60,32 +54,9 @@ export default {
 .main {
   height: 93vh;
 }
-.form div {
-  margin-bottom: 0.4em;
-}
-.cartItem {
-  --bs-gutter-x: 1.5rem;
-}
-.cartItemQuantity,
-.proceed {
-  /* background: #D9B692; */
-  /* color: #eeeff1; */
-  border-radius: 10px;
-}
-.items {
-  padding-right: 30px;
-}
 
 .cart-text {
   font-size: 60px;
-  font-weight: 800;
-}
-.cartItemQuantity {
-  background-color: #1b1b1d;
-  color: #eeeff1;
-}
-.sub,
-.total {
   font-weight: 800;
 }
 .info {
