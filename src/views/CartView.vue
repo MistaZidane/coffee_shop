@@ -7,9 +7,9 @@ import { useToast } from "vue-toastification";
 const auth = useAuthenticator();
 const store = useCartStore();
 const cartItems = computed(() => store.cart);
-const refresh = ()=>{
-  store.refreshCart()
-}
+const refresh = () => {
+  store.refreshCart();
+};
 const tot = computed(() =>
   store.cart.reduce((a, b) => a + b.price * b.number, 0)
 );
@@ -17,7 +17,7 @@ const tot = computed(() =>
 <script lang="ts">
 import CartItem from "../components/cartItem.vue";
 import { getSiteInfo, createOrder } from "@/services/api";
-
+import Loader from "@/components/Loader.vue";
 interface SiteInfo {
   email: string;
   phone: string;
@@ -25,15 +25,17 @@ interface SiteInfo {
 }
 
 export default {
-  components: { CartItem },
+  components: { CartItem, Loader },
   data() {
     return {
       siteInfo: {} as SiteInfo,
       tax: 5,
+      isLoading: false,
     };
   },
   methods: {
     placeOrder(allItems: any) {
+      this.isLoading = true;
       const toast = useToast();
       const store = useCartStore();
       allItems.forEach((a: any, index: number) => {
@@ -42,7 +44,8 @@ export default {
             if (index == allItems.length - 1) {
               toast.success("Order Placed! We will get back to you shortly");
               localStorage.removeItem("cart");
-              store.refreshCart()
+              store.refreshCart();
+              this.isLoading = false;
             }
           })
           .catch((err) => {});
@@ -138,9 +141,14 @@ export default {
           </div>
 
           <template v-if="auth.authStatus === 'authenticated'">
-            <button class="btn btn-lg my-btn" @click="placeOrder(cartItems)">
+            <button
+              class="btn btn-lg my-btn"
+              @click="placeOrder(cartItems)"
+              v-if="!isLoading"
+            >
               Place Order
             </button>
+            <loader v-else></loader>
           </template>
           <template v-else>
             <p>Please login or Create an account to place and order.</p>
