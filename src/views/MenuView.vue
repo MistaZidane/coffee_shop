@@ -18,7 +18,6 @@ export default {
     const store = useProductStore();
     store.fetchProducts();
     const products: any = computed(() => store.products);
-    // const cartItems = computed(() => store.cart);
     return {
       products,
     };
