@@ -1,7 +1,14 @@
 import { API, graphqlOperation } from "aws-amplify";
 import { listSiteInfos, listProducts } from "@/graphql/queries";
-import { createContact } from "@/graphql/mutations";
-
+import { createContact, createCart } from "@/graphql/mutations";
+interface CartItem {
+  name: string;
+  info: string;
+  price: number;
+  imgUrl: string;
+  id: string;
+  number: number;
+}
 export const getSiteInfo = async () => {
   const results = await API.graphql(graphqlOperation(listSiteInfos));
   return results;
@@ -22,6 +29,15 @@ export const createContacts = async (
         message,
         name,
       },
+    })
+  );
+  return results;
+};
+
+export const createOrder = async (obj: CartItem) => {
+  const results = await API.graphql(
+    graphqlOperation(createContact, {
+      input: obj,
     })
   );
   return results;

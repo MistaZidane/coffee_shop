@@ -67,7 +67,6 @@ export default {
   background: url("../assets/menu.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  /* background-clip: content-box; */
   height: 93vh;
   filter: grayscale(100%);
 }
