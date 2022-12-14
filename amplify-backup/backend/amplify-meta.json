@@ -1,0 +1,100 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-coffeeshop-dev-81913-authRole",
+      "UnauthRoleArn": "arn:aws:iam::158171624366:role/amplify-coffeeshop-dev-81913-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::158171624366:role/amplify-coffeeshop-dev-81913-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-coffeeshop-dev-81913-deployment",
+      "UnauthRoleName": "amplify-coffeeshop-dev-81913-unauthRole",
+      "StackName": "amplify-coffeeshop-dev-81913",
+      "StackId": "arn:aws:cloudformation:us-east-1:158171624366:stack/amplify-coffeeshop-dev-81913/782a5470-7ab6-11ed-b8d5-0e0879e3efdb",
+      "AmplifyAppId": "dct2hg7a0typz"
+    }
+  },
+  "api": {
+    "coffeeshop": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "auth",
+          "resourceName": "coffeeshopc7461551",
+          "attributes": [
+            "UserPoolId"
+          ]
+        }
+      ],
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "API_KEY",
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 7,
+              "apiKeyExpirationDate": "2022-12-21T13:06:15.235Z",
+              "description": ""
+            }
+          },
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+              "userPoolConfig": {
+                "userPoolId": "authcoffeeshopc7461551"
+              }
+            }
+          ]
+        },
+        "GraphQLAPIIdOutput": "c3jsjjhohfazbilrqlntinluc4",
+        "GraphQLAPIEndpointOutput": "https://fvev3jvt3bb7flubmsl2tofsqy.appsync-api.us-east-1.amazonaws.com/graphql",
+        "GraphQLAPIKeyOutput": "da2-xtchy26dvzgbhpizj56oebzz6i"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-coffeeshop-dev-81913-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apicoffeeshop"
+      },
+      "lastPushTimeStamp": "2022-12-14T18:36:22.387Z",
+      "lastPushDirHash": "hgos3yy0LsPLsijbEnV1R3iYwuE="
+    }
+  },
+  "auth": {
+    "coffeeshopc7461551": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "frontendAuthConfig": {
+        "socialProviders": [],
+        "usernameAttributes": [],
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": []
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-coffeeshop-dev-81913-deployment/amplify-cfn-templates/auth/coffeeshopc7461551-cloudformation-template.json",
+        "logicalId": "authcoffeeshopc7461551"
+      },
+      "lastPushTimeStamp": "2022-12-14T18:36:22.389Z",
+      "output": {
+        "UserPoolId": "us-east-1_ly2qoSs6J",
+        "AppClientIDWeb": "31o2fagavfqbp1o2mugfdqdpfb",
+        "AppClientID": "1nma2g9ic6b80n3k3nck56429v",
+        "IdentityPoolId": "us-east-1:3d735cbe-fcf6-4850-b818-e4fa9123f49e",
+        "UserPoolArn": "arn:aws:cognito-idp:us-east-1:158171624366:userpool/us-east-1_ly2qoSs6J",
+        "IdentityPoolName": "coffeeshopc7461551_identitypool_c7461551__dev",
+        "UserPoolName": "coffeeshopc7461551_userpool_c7461551"
+      },
+      "lastPushDirHash": "4oEAWO1wCyPL2bt9KK36EPINDWY="
+    }
+  }
+}
