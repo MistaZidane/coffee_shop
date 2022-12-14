@@ -4,13 +4,9 @@ import { Authenticator, useAuthenticator } from "@aws-amplify/ui-vue";
 import { getSiteInfo, createOrder } from "@/services/api";
 import { useCartStore } from "@/stores/Cart";
 import { useToast } from "vue-toastification";
-// const { route, user, signOut } = toRefs(useAuthenticator());
 const auth = useAuthenticator();
 const store = useCartStore();
 const cartItems = computed(() => store.cart);
-const refresh = () => {
-  store.refreshCart();
-};
 const tot = computed(() =>
   store.cart.reduce((a, b) => a + b.price * b.number, 0)
 );
@@ -179,8 +175,6 @@ export default {
 }
 .cartItemQuantity,
 .proceed {
-  /* background: #D9B692; */
-  /* color: #eeeff1; */
   border-radius: 10px;
 }
 .items {
