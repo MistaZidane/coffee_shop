@@ -14,17 +14,6 @@ export default{
       <p class="lead mb-5 mt-4">
         Shop our fresh roasted coffees
       </p>
-      <!-- <div class="row">
-        <div class="col-md-4">
-          <Item name="Coffee one" :price=35 itemId="1" />
-        </div>
-        <div class="col-md-4">
-          <Item name="Coffee one" :price=35 itemId="2" />
-        </div>
-        <div class="col-md-4">
-          <Item name="Coffee one" :price=35 itemId="3" />
-        </div>
-      </div> -->
     </div>
   </div>
 </template>
@@ -34,7 +23,6 @@ export default{
 .img {
   height: 130px;
   width: auto;
-  /* display: block; */
 }
 .intro {
   font-size: 100px;
@@ -47,11 +35,6 @@ export default{
 
 .explore {
   height: 60vh;
-}
-.img-fluid{
-  height: 300px;
-  /* width: fit-content;
-  height: fit-content; */
 }
 
 </style>

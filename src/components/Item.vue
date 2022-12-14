@@ -36,7 +36,7 @@ export default {
         id: this.$props.itemId,
         price: this.$props.price,
         imgUrl: this.$props.imgUrl,
-        number:1
+        number: 1,
       })
         .then((val) => {
           this.store.getSavedCart();
@@ -118,7 +118,6 @@ export default {
 .sendtocart .cart-item:before {
   animation: yAxis 1s alternate forwards cubic-bezier(0.165, 0.84, 0.44, 1);
 }
-
 .shake {
   animation: shakeCart 0.4s ease-in-out forwards;
 }
