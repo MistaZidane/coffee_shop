@@ -27,6 +27,5 @@
 }
 .my-img {
   filter: grayscale(100%);
-  /* height: 50vh; */
 }
 </style>
