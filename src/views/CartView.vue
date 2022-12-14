@@ -6,7 +6,7 @@ import { useCartStore } from "@/stores/Cart";
 const auth = useAuthenticator();
 const store = useCartStore();
 const cartItems = computed(() => store.cart);
-const tot = cartItems.value.reduce((a,b)=>a +b.price,0);
+const tot = computed(()=> store.cart.reduce((a, b) => a + b.price * b.number, 0))
 </script>
 <script lang="ts">
 import CartItem from "../components/cartItem.vue";
@@ -23,13 +23,13 @@ export default {
   data() {
     return {
       siteInfo: {} as SiteInfo,
-      tax: 5
+      tax: 5,
     };
   },
-  methods:{
-    getTotal(){
-    return cartItems.value.reduce((a:any,b:any)=>a.price+b.price,0)
-    }
+  methods: {
+    getTotal() {
+      return cartItems.value.reduce((a: any, b: any) => a.price + b.price, 0);
+    },
   },
   beforeCreate() {
     getSiteInfo()
@@ -92,7 +92,7 @@ export default {
               <h6 class="sub">Subtotal</h6>
             </div>
             <div class="col-sm-4 p-0">
-              <p id="subtotal">${{tot}}</p>
+              <p id="subtotal">${{ tot }}</p>
             </div>
           </div>
           <div class="row m-0">
@@ -100,7 +100,7 @@ export default {
               <h6>Tax</h6>
             </div>
             <div class="col-sm-4 p-0">
-              <p id="tax">${{tax}}</p>
+              <p id="tax">${{ tax }}</p>
             </div>
           </div>
           <hr />
@@ -109,7 +109,7 @@ export default {
               <h5 class="total">Total</h5>
             </div>
             <div class="col-sm-4 p-0">
-              <p id="total">${{ tot+tax }}</p>
+              <p id="total">${{ tot + tax }}</p>
             </div>
           </div>
 

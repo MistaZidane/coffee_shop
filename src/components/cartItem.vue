@@ -1,6 +1,6 @@
 <script lang="ts">
 import { useCartStore } from "@/stores/Cart";
-import { removeItem,addItem } from "@/helper/LocalstorageHelper";
+import { removeItem, addItem } from "@/helper/LocalstorageHelper";
 export default {
   props: {
     name: {
@@ -42,7 +42,7 @@ export default {
         id: this.$props.itemId,
         price: this.$props.price,
         imgUrl: this.$props.imgUrl,
-        number:this.itemNumber
+        number: this.itemNumber,
       })
         .then((val) => {
           this.store.getSavedCart();
@@ -50,14 +50,28 @@ export default {
         .catch((err) => {});
     },
     decreament() {
-      if (this.itemNumber == 1) {
+      this.itemNumber--;
+      if (this.itemNumber < 1) {
         removeItem(this.$props.itemId)
           .then((val) => {
             this.store.getSavedCart();
           })
           .catch((err) => {});
+      } else {
+        addItem({
+          name: this.$props.name,
+          info: this.$props.info,
+          id: this.$props.itemId,
+          price: this.$props.price,
+          imgUrl: this.$props.imgUrl,
+          number: this.itemNumber,
+        })
+          .then((val) => {
+            this.store.getSavedCart();
+          })
+          .catch((err) => {});
       }
-      this.itemNumber--;
+      
     },
   },
   setup() {

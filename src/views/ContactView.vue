@@ -14,8 +14,8 @@ export default {
     const toast = useToast();
     return { toast };
   },
-  components:{
-    Loader
+  components: {
+    Loader,
   },
   data() {
     return {
@@ -51,9 +51,9 @@ export default {
         .then((val: any) => {
           this.toast.success("Contact sent! We will get back to you shortly");
           this.showLoader = false;
-          this.contactFormInfo.email = '';
-          this.contactFormInfo.name = '';
-          this.contactFormInfo.message = '';
+          this.contactFormInfo.email = "";
+          this.contactFormInfo.name = "";
+          this.contactFormInfo.message = "";
         })
         .catch((err) => {
           console.log(err);
@@ -81,7 +81,7 @@ export default {
             <h4>Headquaters</h4>
             <p>
               <font-awesome-icon class="icons" icon="fa-solid fa-house" />
-              <span> {{ siteInfo.location }}</span>
+              <span class="p-2"> {{ siteInfo.location }}</span>
             </p>
           </div>
           <hr />
@@ -89,7 +89,7 @@ export default {
             <h4>Phone</h4>
             <p>
               <font-awesome-icon class="icons" icon="fa-solid fa-phone" />
-              <span> {{ siteInfo.phone }}</span>
+              <span class="p-2"> {{ siteInfo.phone }}</span>
             </p>
           </div>
           <hr />
@@ -97,7 +97,9 @@ export default {
             <h4>Email</h4>
             <p>
               <font-awesome-icon class="icons" icon="fa-solid fa-envelope" />
-              <a href="mailto:info@Coffreka.com"> {{ siteInfo.email }}</a>
+              <a href="mailto:info@Coffreka.com" class="p-2">
+                {{ siteInfo.email }}</a
+              >
             </p>
           </div>
         </div>
